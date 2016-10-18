@@ -1,0 +1,238 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Andela-023/code/buckit/config/environment.rb": [
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/application.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/boot.rb": [
+        1,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/environments/test.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/application_controller_renderer.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/assets.rb": [
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/backtrace_silencers.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/cookies_serializer.rb": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/inflections.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/mime_types.rb": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/new_framework_defaults.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/session_store.rb": [
+        null,
+        null,
+        1
+      ],
+      "/Users/Andela-023/code/buckit/config/initializers/wrap_parameters.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/config/routes.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/controllers/home_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/spec/controllers/users_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/controllers/users_controller.rb": [
+        1,
+        null
+      ]
+    },
+    "timestamp": 1476801718
+  }
+}
