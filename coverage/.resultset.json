@@ -200,6 +200,13 @@
         1,
         null
       ],
+      "/Users/Andela-023/code/buckit/spec/factories/users.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/Andela-023/code/buckit/config/routes.rb": [
         1,
         1,
@@ -240,8 +247,10 @@
         null,
         null,
         null,
-        0,
-        0,
+        null,
+        null,
+        1,
+        1,
         null,
         null,
         null
@@ -254,9 +263,9 @@
         null,
         1,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         0,
         0,
@@ -267,7 +276,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null
       ],
@@ -282,8 +291,48 @@
         null,
         1,
         null
+      ],
+      "/Users/Andela-023/code/buckit/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/application_record.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1476803870
+    "timestamp": 1476806319
   }
 }

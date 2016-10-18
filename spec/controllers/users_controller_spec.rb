@@ -12,12 +12,14 @@ RSpec.describe UsersController, type: :controller do
   describe "POST #create" do
     it "creates a new user" do
       post :create, params: {
-        email: "user@gmail.com",
-        password: "password",
-        password_confirmation: "password"
+        user: {
+          email: "user@gmail.com",
+          password: "password",
+          password_confirmation: "password"
+        }
       }
 
-      expect(controller).to respond_with(:ok)
+      expect(controller).to respond_with(302)
       expect(User.first).to be_present
     end
   end
