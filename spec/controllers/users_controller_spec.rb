@@ -10,17 +10,22 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST #create" do
-    it "creates a new user" do
-      post :create, params: {
-        user: {
-          email: "user@gmail.com",
-          password: "password",
-          password_confirmation: "password"
-        }
-      }
+    context "when user credentials are valid" do
+      it "creates a new user" do
+        post :create, params: { user: attributes_for(:user) }
 
-      expect(controller).to respond_with(302)
-      expect(User.first).to be_present
+        expect(controller).to redirect_to(root_path)
+        expect(flash[:success]).to eq("You have signed up successfully")
+        expect(User.first.email).to eq("user@gmail.com")
+      end
+    end
+
+    context "when user credentials are invalid" do
+      it "returns an error message" do
+        post :create, params: { user: attributes_for(:user, :invalid) }
+
+        expect(flash[:error]).to include("Email is invalid")
+      end
     end
   end
 end
