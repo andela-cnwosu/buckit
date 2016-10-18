@@ -207,6 +207,7 @@
         1,
         null,
         1,
+        1,
         null
       ],
       "/Users/Andela-023/code/buckit/app/controllers/home_controller.rb": [
@@ -250,6 +251,24 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/Andela-023/code/buckit/spec/helpers/home_helper_spec.rb": [
@@ -265,6 +284,6 @@
         null
       ]
     },
-    "timestamp": 1476803188
+    "timestamp": 1476803870
   }
 }
