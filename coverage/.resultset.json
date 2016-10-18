@@ -230,6 +230,19 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/Andela-023/code/buckit/app/controllers/users_controller.rb": [
@@ -252,6 +265,6 @@
         null
       ]
     },
-    "timestamp": 1476802524
+    "timestamp": 1476803188
   }
 }
