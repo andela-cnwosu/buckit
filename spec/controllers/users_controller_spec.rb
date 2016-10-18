@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
   describe "new" do
-    get :new
+    it "renders a new page" do
+      get :new
 
-    expect(response).to render_template(:new)
+      expect(response).to render_template(:new)
+    end
   end
 end
