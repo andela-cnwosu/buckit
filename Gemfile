@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'doorkeeper'
 gem 'doorkeeper-jwt'
 gem 'bootstrap-sass'
+gem 'responders'
 
 group :development, :test do
   gem 'pry-rails'

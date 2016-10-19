@@ -8,16 +8,18 @@ RSpec.describe SessionsController, type: :controller do
       it "logs in a user" do
         post :create, params: { session: attributes_for(:user, :login_valid) }
 
-        expect(controller).to respond_with(302)
-        expect(User.first).to be_present
+        expect(flash[:success]).to eq(successful_login_message)
       end
     end
 
     context "when user is not authenticated" do
       it "returns an error message" do
-        post :create, params: { session: attributes_for(:user, :invalid) }
+        post :create, xhr: true, params: {
+          session: attributes_for(:user, :invalid)
+        }
 
-        expect(flash[:error]).to include(invalid_login_message)
+        expect(controller).to respond_with(200)
+        expect(response.content_type).to eq("text/javascript")
       end
     end
   end

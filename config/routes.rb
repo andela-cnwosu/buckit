@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get "users/new", to: "users#new"
-  post "users/create", to: "users#create"
+  scope path: "users", controller: "users" do
+    get "new", to: "users#new"
+    post "signup", to: "users#create"
+  end
+
+  scope path: "sessions", controller: "sessions" do
+    post "login", to: "sessions#create"
+    post "logout", to: "sessions#destroy"
+  end
 end
