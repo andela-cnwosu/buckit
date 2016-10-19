@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   scope path: "sessions", controller: "sessions" do
-    post "login", to: "sessions#create"
-    post "logout", to: "sessions#destroy"
+    post "login", to: "sessions#create", as: 'login'
+    post "logout", to: "sessions#destroy", as: 'logout'
   end
 end
