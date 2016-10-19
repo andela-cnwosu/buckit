@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  include Messages
+  include ApplicationHelper
+
   def new
 
   end
@@ -6,11 +9,9 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      flash[:success] = "You have signed up successfully"
-      redirect_to root_url
+      flash_and_redirect_to_root(:success, successful_signup_message)
     else
-      flash[:error] = user.errors.full_messages
-      redirect_to root_url
+      flash_and_redirect_to_root(:error, user.errors.full_messages)
     end
   end
 
