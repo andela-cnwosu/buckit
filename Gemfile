@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'doorkeeper'
 gem 'doorkeeper-jwt'
 gem 'bootstrap-sass'
+gem 'responders'
 
 group :development, :test do
   gem 'pry-rails'
@@ -25,6 +26,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda-matchers'
   gem 'simplecov'
+  gem 'rails-controller-testing'
 end
 
 group :development do

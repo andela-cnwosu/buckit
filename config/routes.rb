@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
   use_doorkeeper
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root "home#index"
+
+  scope path: "users", controller: "users" do
+    get "new", to: "users#new"
+    post "signup", to: "users#create"
+  end
+
+  scope path: "sessions", controller: "sessions" do
+    post "login", to: "sessions#create"
+    post "logout", to: "sessions#destroy"
+  end
 end
