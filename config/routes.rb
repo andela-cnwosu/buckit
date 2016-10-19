@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  namespace :api do
+    scope module: :v1 do
+      resources :lists
+    end
+  end
+
   scope path: "users", controller: "users" do
     get "new", to: "users#new"
     post "signup", to: "users#create"

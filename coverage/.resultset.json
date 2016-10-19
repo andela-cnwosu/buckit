@@ -188,6 +188,10 @@
         null,
         null
       ],
+      "/Users/Andela-023/code/buckit/app/helpers/api/v1/lists_helper.rb": [
+        1,
+        null
+      ],
       "/Users/Andela-023/code/buckit/app/controllers/concerns/application_helper.rb": [
         1,
         1,
@@ -206,6 +210,14 @@
       ],
       "/Users/Andela-023/code/buckit/app/helpers/users_helper.rb": [
         1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/spec/factories/lists.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/Andela-023/code/buckit/spec/factories/users.rb": [
@@ -238,6 +250,12 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
@@ -255,6 +273,40 @@
         null,
         null,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/controllers/api/v1/lists_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/controllers/api/api_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/spec/controllers/home_controller_spec.rb": [
+        1,
+        null,
         1,
         null,
         null
@@ -434,6 +486,22 @@
         null,
         null
       ],
+      "/Users/Andela-023/code/buckit/spec/helpers/api/v1/lists_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
       "/Users/Andela-023/code/buckit/spec/helpers/home_helper_spec.rb": [
         1,
         null,
@@ -459,6 +527,22 @@
       "/Users/Andela-023/code/buckit/spec/helpers/users_helper_spec.rb": [
         1,
         null,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/spec/models/list_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/list.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/application_record.rb": [
+        1,
         1,
         null
       ],
@@ -496,13 +580,8 @@
         null,
         null,
         null
-      ],
-      "/Users/Andela-023/code/buckit/app/models/application_record.rb": [
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1476869765
+    "timestamp": 1476882323
   }
 }
