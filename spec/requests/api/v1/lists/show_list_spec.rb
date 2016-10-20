@@ -11,18 +11,20 @@ RSpec.describe "Show List", type: :request do
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
 
-      it "creates a bucket list" do
-        get "/api/v1/bucketlists/1", params: {
-          list: attributes_for(:updated_list)
-        }
+      it "retrieves a bucket list" do
+        get "/api/v1/bucketlists/1"
 
         expect(response.status).to be(200)
-        expect(List.first.name).to eq("MyBucket")
+        expect(json["name"]).to eq("MyBucketList")
       end
     end
 
-    context "when user provide invalid parameters" do
-      it_behaves_like("invalid parameters", "get", "/api/v1/bucketlists/1")
+    context "when the bucketlist does not exist" do
+      it_behaves_like("missing parameters", "get", "/api/v1/bucketlists/3")
+    end
+
+    context "when the route does not exist" do
+      it_behaves_like("invalid route", "get", "/api/v1/bucketlist/1")
     end
   end
 end

@@ -3,33 +3,34 @@ module Api
     class ListsController < Api::ApiController
       include ApplicationHelper
 
+      before_action :set_list, except: :create
+
       def create
         list = List.new(list_params)
         list.user = current_user
-        if list.save
-          render(json: list, status: 201)
-        else
-          render(json: {
-            error: list.errors.full_messages, status: :internal_server_error
-          })
-        end
+        render_json(list, 201, list.save)
       end
 
       def update
-        list = List.find_by(id: params[:id])
-        if list.update(list_params)
-          render(json: list, status: 200)
-        else
-          render(json: {
-            error: list.errors.full_messages, status: :internal_server_error
-          })
-        end
+        render_json(@list, 200, @list.update(list_params))
+      end
+
+      def show
+        render_json(@list, 200, true) if @list
       end
 
       private
 
       def list_params
         params.require(:list).permit(:name)
+      end
+
+      def set_list
+        @list = List.find_by(id: params[:id], user: current_user)
+        unless @list
+          render(json: { error: resource_not_exist_message}, status: 422)
+          return
+        end
       end
     end
   end

@@ -3,10 +3,11 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  namespace :api do
+  namespace :api, defaults: { format: "json" } do
     namespace :v1 do
       resources :lists, path: "bucketlists"
     end
+    match "*url", to: "api#route_not_found", via: :all
   end
 
   scope path: "users", controller: "users" do
