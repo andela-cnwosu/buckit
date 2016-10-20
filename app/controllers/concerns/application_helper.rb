@@ -11,7 +11,7 @@ module ApplicationHelper
       message = model
     else
       message = { error: model.errors.full_messages }
-      status = 500
+      status = 422
     end
     render json: message, status: status
   end

@@ -15,6 +15,10 @@ module MessagesHelper
     "The resource requested does not exist"
   end
 
+  def resources_not_exist_message(resource)
+    "You currently do not have any #{resource}"
+  end
+
   def route_not_exist_message
     "Route does not exist"
   end
