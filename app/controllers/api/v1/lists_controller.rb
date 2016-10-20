@@ -16,7 +16,11 @@ module Api
       end
 
       def show
-        render_json(@list, 200, true) if @list
+        render_json(@list, 200, true)
+      end
+
+      def destroy
+        render_json(@list, 204, @list.destroy)
       end
 
       private
