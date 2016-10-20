@@ -1,3 +1,3 @@
 class List < ApplicationRecord
-  belongs_to :created_by, class_name: 'User'
+  belongs_to :user
 end

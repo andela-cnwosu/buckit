@@ -5,7 +5,7 @@ module Api
 
       def create
         user = User.find_by(id: doorkeeper_token.resource_owner_id)
-        list = List.new(name: params[:name], created_by: user)
+        list = List.new(name: params[:name], user: user)
         if list.save
           render(json: list, status: 201)
         else
