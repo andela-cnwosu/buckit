@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :api do
-    scope module: :v1 do
-      resources :lists
+    namespace :v1 do
+      resources :lists, path: "bucketlists"
     end
   end
 
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   scope path: "sessions", controller: "sessions" do
-    post "login", to: "sessions#create", as: 'login'
-    post "logout", to: "sessions#destroy", as: 'logout'
+    post "login", to: "sessions#create", as: "login"
+    post "logout", to: "sessions#destroy", as: "logout"
   end
 end

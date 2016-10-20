@@ -21,6 +21,7 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include MessagesHelper
+  config.include Requests::JsonHelpers, type: :request
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
