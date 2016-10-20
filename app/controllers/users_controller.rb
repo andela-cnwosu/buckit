@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   include Messages
-  include ApplicationHelper
+  include Sessions
 
   def new
-
   end
 
   def create

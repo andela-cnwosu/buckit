@@ -6,7 +6,9 @@ RSpec.describe Api::V1::ListsController, type: :controller do
 
     context "when user has not provided the authorization code" do
       it "returns an authorization error response" do
-        put :update, params: { name: "MyBucket", id: list.id }
+        put :update, params: {
+          list: attributes_for(:updated_list), id: list.id
+        }
 
         expect(controller).to respond_with(:unauthorized)
       end
@@ -16,9 +18,11 @@ RSpec.describe Api::V1::ListsController, type: :controller do
       include_context "doorkeeper oauth"
 
       it "creates a bucket list" do
-        put :update, params: { name: "MyBucket", id: list.id }
+        put :update, params: {
+          list: attributes_for(:updated_list), id: list.id
+        }
 
-        expect(controller).to respond_with(201)
+        expect(controller).to respond_with(200)
         expect(List.first.name).to eq("MyBucket")
       end
     end
@@ -27,7 +31,9 @@ RSpec.describe Api::V1::ListsController, type: :controller do
       include_context "doorkeeper oauth"
 
       it "returns a json error" do
-        put :update, params: { name: nil, id: list.id }
+        put :update, params: {
+          list: attributes_for(:list, :invalid), id: list.id
+        }
 
         expect(response.body).to include("Name can't be blank")
         expect(List.first.name).to be_present
