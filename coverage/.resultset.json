@@ -254,6 +254,13 @@
         1,
         null
       ],
+      "/Users/Andela-023/code/buckit/spec/factories/items.rb": [
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/Andela-023/code/buckit/spec/factories/lists.rb": [
         1,
         1,
@@ -608,6 +615,33 @@
         1,
         null
       ],
+      "/Users/Andela-023/code/buckit/spec/models/item_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/item.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/Andela-023/code/buckit/spec/models/list_spec.rb": [
         1,
         null,
@@ -625,11 +659,6 @@
         1,
         1,
         null,
-        1,
-        null
-      ],
-      "/Users/Andela-023/code/buckit/app/models/application_record.rb": [
-        1,
         1,
         null
       ],
@@ -913,6 +942,6 @@
         null
       ]
     },
-    "timestamp": 1477039037
+    "timestamp": 1477039484
   }
 }
