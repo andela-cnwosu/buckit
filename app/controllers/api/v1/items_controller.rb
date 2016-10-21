@@ -15,6 +15,10 @@ module Api
         render_json(@item, 200, @item.update(item_params))
       end
 
+      def destroy
+        render_json(@item, 204, @item.destroy)
+      end
+
       private
 
       def item_params

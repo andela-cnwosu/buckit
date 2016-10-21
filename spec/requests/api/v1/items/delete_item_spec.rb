@@ -1,7 +1,7 @@
 require "rails_helper"
 
-RSpec.describe "Update Item", type: :request do
-  describe "PUT #update" do
+RSpec.describe "Delete Item", type: :request do
+  describe "DESTROY #destroy" do
     let!(:item) do
       create :list
       create :item
