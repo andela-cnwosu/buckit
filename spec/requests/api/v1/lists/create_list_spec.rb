@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Create List", type: :request do
-  describe 'POST #create' do
+  describe "POST #create" do
     context "when user has not provided the authorization code" do
       it_behaves_like("unauthorized", :post, "/api/v1/bucketlists")
     end

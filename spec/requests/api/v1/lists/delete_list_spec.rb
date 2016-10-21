@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Delete List", type: :request do
-  describe 'DELETE #destroy' do
+  describe "DELETE #destroy" do
     let!(:list) { create :list }
 
     context "when user has not provided the authorization code" do

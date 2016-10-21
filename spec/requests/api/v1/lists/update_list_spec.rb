@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Update List", type: :request do
-  describe 'PUT #update' do
+  describe "PUT #update" do
     let!(:list) { create :list }
 
     context "when user has not provided the authorization code" do

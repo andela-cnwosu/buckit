@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "All Lists", type: :request do
-  describe 'GET #index' do
+  describe "GET #index" do
     let!(:lists) do
       user = create(:user, email: Faker::Internet.email)
       create_list(:list, 5, user: user)

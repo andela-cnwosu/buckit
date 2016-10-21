@@ -5,7 +5,7 @@ class CreateDoorkeeperTables < ActiveRecord::Migration
       t.string  :uid,          null: false
       t.string  :secret,       null: false
       t.text    :redirect_uri, null: false
-      t.string  :scopes,       null: false, default: ''
+      t.string  :scopes,       null: false, default: ""
       t.timestamps             null: false
     end
 
@@ -36,7 +36,6 @@ class CreateDoorkeeperTables < ActiveRecord::Migration
       # If you use a custom token generator you may need to change this column
       # from string to text, so that it accepts tokens larger than 255
       # characters. More info on custom token generators in:
-      # https://github.com/doorkeeper-gem/doorkeeper/tree/v3.0.0.rc1#custom-access-token-generator
       #
       # t.text     :token,             null: false
       t.string   :token,                  null: false

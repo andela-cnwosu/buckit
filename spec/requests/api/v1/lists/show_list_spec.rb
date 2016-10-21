@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Show List", type: :request do
-  describe 'GET #show' do
+  describe "GET #show" do
     let!(:list) { create :list }
 
     context "when user has not provided the authorization code" do
