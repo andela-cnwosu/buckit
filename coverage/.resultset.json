@@ -612,6 +612,13 @@
         1,
         null,
         1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
         null
       ],
       "/Users/Andela-023/code/buckit/app/models/list.rb": [
@@ -631,6 +638,7 @@
         null,
         1,
         1,
+        2,
         2,
         null,
         null,
@@ -905,6 +913,6 @@
         null
       ]
     },
-    "timestamp": 1477038767
+    "timestamp": 1477039037
   }
 }

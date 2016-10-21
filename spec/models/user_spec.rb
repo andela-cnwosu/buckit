@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe "associations" do
     it { is_expected.to have_secure_password }
+    it { is_expected.to have_many(:lists) }
   end
 
   describe "validations" do
