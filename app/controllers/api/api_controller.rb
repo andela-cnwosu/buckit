@@ -7,5 +7,9 @@ module Api
     def route_not_found
       render json: { error: "Route does not exist"}, status: 404
     end
+
+    def doorkeeper_unauthorized_render_options(error: nil)
+      { json: { error: "Not authorized" } }
+    end
   end
 end

@@ -3,7 +3,14 @@ module Api
     class ListsController < Api::ApiController
       include ApplicationHelper
 
-      before_action :set_list, except: :create
+      before_action :set_list, except: [:create, :index]
+
+      def index
+        lists = List.where(user: current_user)
+        return render_json(lists, 200, true) unless lists.empty?
+        error = resources_not_exist_message("bucket list")
+        render(json: { error: error }, status: 204)
+      end
 
       def create
         list = List.new(list_params)
@@ -32,7 +39,7 @@ module Api
       def set_list
         @list = List.find_by(id: params[:id], user: current_user)
         unless @list
-          render(json: { error: resource_not_exist_message}, status: 422)
+          render(json: { error: resource_not_exist_message }, status: 422)
           return
         end
       end

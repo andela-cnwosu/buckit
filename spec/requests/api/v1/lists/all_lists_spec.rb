@@ -15,10 +15,10 @@ RSpec.describe "All Lists", type: :request do
       include_context "doorkeeper oauth"
 
       it "retrieves a bucket list" do
-        get "/api/v1/bucketlists/1"
+        get "/api/v1/bucketlists"
 
         expect(response.status).to be(200)
-        expect(json["name"]).to eq("MyBucketList")
+        expect(json[0]["name"]).to eq("MyBucketList")
       end
     end
 
@@ -29,14 +29,12 @@ RSpec.describe "All Lists", type: :request do
         List.destroy_all
         get "/api/v1/bucketlists"
 
-        expect(response.status).to be(422)
-        expect(json["error"]).to eq(resources_not_exist_message)
+        expect(response.status).to be(204)
       end
-      it_behaves_like("missing parameters", "get", "/api/v1/bucketlists/3")
     end
 
     context "when the route does not exist" do
-      it_behaves_like("invalid route", "get", "/api/v1/bucketlist/1")
+      it_behaves_like("invalid route", "get", "/api/v1/bucketlist")
     end
   end
 end
