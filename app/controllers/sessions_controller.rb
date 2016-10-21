@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       sign_in user
     else
       respond_to do |format|
-         format.js { render :create }
+        format.js { render :create }
       end
     end
   end

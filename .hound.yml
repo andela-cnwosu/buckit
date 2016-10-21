@@ -1,6 +1,7 @@
 scss:
   enabled: false
 ruby:
+  config_file: .rubocop.yml
   enabled: true
 jshint:
   enabled: false

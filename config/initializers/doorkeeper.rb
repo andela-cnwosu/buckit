@@ -7,7 +7,7 @@ Doorkeeper.configure do
     # Put your resource owner authentication logic here.
     # Example implementation:
     session[:return_route] = request.fullpath
-    User.find_by_id(session[:user_id]) || redirect_to(new_user_session_url)
+    User.find_by(id: session[:user_id]) || redirect_to(root_url)
   end
 
   # If you want to restrict access to the web interface for adding oauth authorized applications, you need to declare the block below.
@@ -18,11 +18,11 @@ Doorkeeper.configure do
   # end
 
   # Authorization Code expiration time (default 10 minutes).
-  # authorization_code_expires_in 10.minutes
+  authorization_code_expires_in 10.minutes
 
   # Access token expiration time (default 2 hours).
   # If you want to disable expiration, set this to nil.
-  # access_token_expires_in 2.hours
+  access_token_expires_in 2.hours
 
   # Assign a custom TTL for implicit grants.
   # custom_access_token_expires_in do |oauth_client|
@@ -31,7 +31,7 @@ Doorkeeper.configure do
 
   # Use a custom class for generating the access token.
   # https://github.com/doorkeeper-gem/doorkeeper#custom-access-token-generator
-  access_token_generator '::Doorkeeper::JWT'
+  access_token_generator 'Doorkeeper::JWT'
 
   # The controller Doorkeeper::ApplicationController inherits from.
   # Defaults to ActionController::Base.
@@ -43,13 +43,13 @@ Doorkeeper.configure do
   # reuse_access_token
 
   # Issue access tokens with refresh token (disabled by default)
-  # use_refresh_token
+  use_refresh_token
 
   # Provide support for an owner to be assigned to each registered application (disabled by default)
   # Optional parameter confirmation: true (default false) if you want to enforce ownership of
   # a registered application
   # Note: you must also run the rails g doorkeeper:application_owner generator to provide the necessary support
-  # enable_application_owner confirmation: false
+  enable_application_owner confirmation: true
 
   # Define access token scopes for your provider
   # For more information go to
@@ -120,6 +120,7 @@ Doorkeeper::JWT.configure do
     user = User.find(opts[:resource_owner_id])
 
     {
+      gen_id: Base64.encode64(rand(1000).to_s),
       user: {
         id: user.id,
         email: user.email
@@ -130,7 +131,7 @@ Doorkeeper::JWT.configure do
   # Use the application secret specified in the Access Grant token
   # Defaults to false
   # If you specify `use_application_secret true`, both secret_key and secret_key_path will be ignored
-  use_application_secret false
+  # use_application_secret false
 
   # Set the encryption secret. This would be shared with any other applications
   # that should be able to read the payload of the token.
