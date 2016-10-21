@@ -11,5 +11,14 @@ module Api
     def doorkeeper_unauthorized_render_options(*)
       { json: { error: "Not authorized" } }
     end
+
+    def retrieve_list
+      list_id = params[:id] || params[:list_id]
+      @list = current_user.lists.find_by(id: list_id)
+      unless @list
+        render(json: { error: resource_not_exist_message }, status: 422)
+        return
+      end
+    end
   end
 end
