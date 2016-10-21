@@ -5,7 +5,7 @@ FactoryGirl.define do
     password_confirmation "password"
   end
 
-  trait :invalid do
+  trait :user_invalid do
     email "usergmail.com"
     password "password"
   end
