@@ -15,7 +15,7 @@ RSpec.describe SessionsController, type: :controller do
     context "when user is not authenticated" do
       it "returns an error message" do
         post :create, xhr: true, params: {
-          session: attributes_for(:user, :invalid)
+          session: attributes_for(:user, :user_invalid)
         }
 
         expect(controller).to respond_with(200)

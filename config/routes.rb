@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
-      resources :lists, path: "bucketlists"
+      resources :lists, path: "bucketlists" do
+        resources :items, only: [:create]
+      end
     end
     match "*url", to: "api#route_not_found", via: :all
   end

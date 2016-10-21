@@ -13,7 +13,7 @@ RSpec.describe "Update List", type: :request do
 
       it "creates a bucket list" do
         put "/api/v1/bucketlists/1", params: {
-          list: attributes_for(:updated_list)
+          list: attributes_for(:list, :updated)
         }
 
         expect(response.status).to be(200)

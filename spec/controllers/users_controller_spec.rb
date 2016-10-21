@@ -25,7 +25,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "when user credentials are invalid" do
       it "returns an error message" do
-        post :create, params: { user: attributes_for(:user, :invalid) }
+        post :create, params: { user: attributes_for(:user, :user_invalid) }
 
         expect(flash[:error]).to include("Email is invalid")
       end
