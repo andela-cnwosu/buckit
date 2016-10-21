@@ -11,7 +11,7 @@ RSpec.describe "Update List", type: :request do
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
 
-      it "creates a bucket list" do
+      it "updates a bucket list" do
         put "/api/v1/bucketlists/1", params: {
           list: attributes_for(:list, :updated)
         }
@@ -25,7 +25,7 @@ RSpec.describe "Update List", type: :request do
       it_behaves_like("invalid parameters", "put", "/api/v1/bucketlists/1")
     end
 
-    context "when the bucketlist does not exist" do
+    context "when the bucket list does not exist" do
       it_behaves_like("missing parameters", "put", "/api/v1/bucketlists/3")
     end
 

@@ -11,7 +11,7 @@ RSpec.describe "Delete List", type: :request do
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
 
-      it "creates a bucket list" do
+      it "deletes a bucket list" do
         delete "/api/v1/bucketlists/1"
 
         expect(response.status).to be(204)
@@ -19,7 +19,7 @@ RSpec.describe "Delete List", type: :request do
       end
     end
 
-    context "when the bucketlist does not exist" do
+    context "when the bucket list does not exist" do
       it_behaves_like("missing parameters", "delete", "/api/v1/bucketlists/3")
     end
 
