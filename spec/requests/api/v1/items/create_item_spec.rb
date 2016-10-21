@@ -22,7 +22,8 @@ RSpec.describe "Create Item", type: :request do
     end
 
     context "when user provide invalid parameters" do
-      it_behaves_like("invalid parameters", "post", "/api/v1/bucketlists/1/items")
+      route = "/api/v1/bucketlists/1/items"
+      it_behaves_like("invalid parameters", "post", route)
     end
 
     context "when the route does not exist" do
