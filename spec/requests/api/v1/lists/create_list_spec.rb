@@ -10,7 +10,7 @@ RSpec.describe "Create List", type: :request do
       include_context "doorkeeper oauth"
 
       it "creates a bucket list" do
-        post "/api/v1/bucketlists", params: { list: attributes_for(:list) }
+        post "/api/v1/bucketlists", params: attributes_for(:list)
 
         expect(List.first.name).to eq("MyBucketList")
         expect(response.status).to be(201)

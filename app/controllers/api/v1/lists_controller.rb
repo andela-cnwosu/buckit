@@ -32,7 +32,7 @@ module Api
       private
 
       def list_params
-        params.require(:list).permit(:name)
+        params.permit(:name)
       end
     end
   end
