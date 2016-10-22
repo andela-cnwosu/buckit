@@ -22,7 +22,7 @@ module Api
       private
 
       def item_params
-        params.require(:item).permit(:name, :done, :list_id)
+        params.permit(:name, :done, :list_id)
       end
 
       def retrieve_item

@@ -15,9 +15,8 @@ RSpec.describe "Update Item", type: :request do
       include_context "doorkeeper oauth"
 
       it "updates a bucket list item" do
-        put "/api/v1/bucketlists/1/items/1", params: {
-          item: attributes_for(:item, :updated)
-        }
+        params = attributes_for(:item, :updated)
+        put "/api/v1/bucketlists/1/items/1", params: params
 
         expect(response.status).to be(200)
         expect(Item.first.name).to eq("MyBucket")
