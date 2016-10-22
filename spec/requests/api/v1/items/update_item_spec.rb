@@ -36,5 +36,9 @@ RSpec.describe "Update Item", type: :request do
     context "when the route does not exist" do
       it_behaves_like("invalid route", "put", "/api/v1/bucketlists/1/item/1")
     end
+
+    context "when the item object is returned" do
+      it_behaves_like("serializable", "put", "/api/v1/bucketlists/1/items/1")
+    end
   end
 end

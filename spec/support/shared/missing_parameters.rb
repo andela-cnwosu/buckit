@@ -10,6 +10,6 @@ RSpec.shared_examples "missing parameters" do |method, action|
   end
 
   it "returns a json error message" do
-    expect(json["error"]).to eq(resource_not_exist_message)
+    expect(json[:error]).to eq(resource_not_exist_message)
   end
 end

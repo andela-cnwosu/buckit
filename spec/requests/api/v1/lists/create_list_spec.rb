@@ -14,7 +14,7 @@ RSpec.describe "Create List", type: :request do
 
         expect(List.first.name).to eq("MyBucketList")
         expect(response.status).to be(201)
-        expect(json["name"]).to include(List.first.name)
+        expect(json[:name]).to include(List.first.name)
       end
     end
 
