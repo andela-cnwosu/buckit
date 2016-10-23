@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "All Lists", type: :request do
   describe "GET #index" do
     let!(:lists) do
-      create_list(:list, 5, user: User.first || create(:user))
+      create_list(:list_with_items, 5, user: User.first || create(:user))
     end
 
     context "when user has not provided the authorization code" do
@@ -12,13 +12,18 @@ RSpec.describe "All Lists", type: :request do
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
+      let!(:request) { get "/api/v1/bucketlists" }
 
       it "retrieves all bucket lists for the user" do
-        get "/api/v1/bucketlists"
-
         expect(response.status).to be(200)
         expect(json.count).to eq(5)
-        expect(json[0]["name"]).to eq("MyBucketList")
+        expect(json[0][:name]).to eq("MyBucketList")
+      end
+
+      it "returns the item objects in each list" do
+        json.each do |list_response|
+          expect(list_response[:items]).to be_present
+        end
       end
     end
 
@@ -35,6 +40,10 @@ RSpec.describe "All Lists", type: :request do
 
     context "when the route does not exist" do
       it_behaves_like("invalid route", "get", "/api/v1/bucketlist")
+    end
+
+    context "when the list objects are returned" do
+      it_behaves_like("serializable", "get", "/api/v1/bucketlists")
     end
   end
 end

@@ -10,6 +10,6 @@ RSpec.shared_examples "invalid route" do |method, action|
   end
 
   it "responds with error" do
-    expect(json["error"]).to eq(route_not_exist_message)
+    expect(json[:error]).to eq(route_not_exist_message)
   end
 end

@@ -17,7 +17,7 @@ RSpec.describe "Create Item", type: :request do
 
         expect(Item.first.name).to eq("MyBucketItem")
         expect(response.status).to be(201)
-        expect(json["name"]).to include(Item.first.name)
+        expect(json[:name]).to include(Item.first.name)
       end
     end
 
@@ -28,6 +28,10 @@ RSpec.describe "Create Item", type: :request do
 
     context "when the route does not exist" do
       it_behaves_like("invalid route", "post", "/api/v1/bucketlist/1/items")
+    end
+
+    context "when the item object is returned" do
+      it_behaves_like("serializable", "post", "/api/v1/bucketlists/1/items")
     end
   end
 end

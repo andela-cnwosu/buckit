@@ -1,6 +1,7 @@
 module SessionsHelper
   def current_user
-    @current_user ||= User.find_by(id: doorkeeper_token.resource_owner_id)
+    token = doorkeeper_token
+    @current_user ||= User.find_by(id: token.resource_owner_id) if token
   end
 
   def signed_in?

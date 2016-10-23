@@ -5,6 +5,6 @@ RSpec.shared_examples "invalid parameters" do |method, action|
     params = attributes_for(:item, :invalid)
     send(method, action, params: params)
 
-    expect(json["error"][0]).to include("can't be blank")
+    expect(json[:error][0]).to include("can't be blank")
   end
 end
