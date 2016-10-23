@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Show List", type: :request do
   describe "GET #show" do
-    let!(:list) { create :list }
+    let!(:list) { create :list_with_items }
 
     context "when user has not provided the authorization code" do
       it_behaves_like("unauthorized", "get", "/api/v1/bucketlists/1")
@@ -10,16 +10,15 @@ RSpec.describe "Show List", type: :request do
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
+      let!(:request) { get "/api/v1/bucketlists/1" }
 
       it "retrieves a bucket list" do
-        get "/api/v1/bucketlists/1"
-
         expect(response.status).to be(200)
         expect(json[:name]).to eq("MyBucketList")
       end
 
       it "embeds the item to the list" do
-        expect(json[:list][:item][:name]).to eq(list.item.name)
+        expect(json[:items][0][:name]).to eq(list.items.first.name)
       end
     end
 

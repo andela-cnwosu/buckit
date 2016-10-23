@@ -1,3 +1,5 @@
 class ItemSerializer < ActiveModel::Serializer
-  attributes :id
+  include DateFormatter
+
+  attributes :id, :name, :date_created, :date_modified, :done
 end

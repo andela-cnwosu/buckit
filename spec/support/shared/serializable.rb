@@ -2,10 +2,11 @@ RSpec.shared_examples "serializable" do |method, action|
   include_context "doorkeeper oauth"
 
   before do
-    send(method, action)
+    params = attributes_for(:item)
+    send(method, action, params: params)
   end
 
-  let!(:list_response){ json[:list] || json[:lists][0] }
+  let!(:list_response) { json[0] || json }
 
   it "returns a date created key" do
     expect(list_response[:date_created]).to be_present

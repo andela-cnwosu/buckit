@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "All Lists", type: :request do
   describe "GET #index" do
     let!(:lists) do
-      create_list(:list, 5, user: User.first || create(:user))
+      create_list(:list_with_items, 5, user: User.first || create(:user))
     end
 
     context "when user has not provided the authorization code" do
@@ -20,8 +20,8 @@ RSpec.describe "All Lists", type: :request do
         expect(json[0][:name]).to eq("MyBucketList")
       end
 
-      it "returns the item object into each list" do
-        json[:lists].each do |list_response|
+      it "returns the item objects in each list" do
+        json.each do |list_response|
           expect(list_response[:items]).to be_present
         end
       end

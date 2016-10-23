@@ -15,6 +15,7 @@ gem "doorkeeper"
 gem "doorkeeper-jwt"
 gem "bootstrap-sass"
 gem "responders"
+gem "active_model_serializers"
 
 group :development, :test do
   gem "pry-rails"

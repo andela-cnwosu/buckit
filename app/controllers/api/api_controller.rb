@@ -9,7 +9,7 @@ module Api
     end
 
     def doorkeeper_unauthorized_render_options(*)
-      { json: { error: "Not authorized" } }
+      { json: { error: "Access token is required" } }
     end
 
     def retrieve_list
