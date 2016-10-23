@@ -4,8 +4,12 @@ class User < ApplicationRecord
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  validates :first_name,
+            :last_name,
+            :email,
+            presence: true
+
   validates :email,
-            presence: true,
             uniqueness: true,
             format: EMAIL_REGEX
 
@@ -13,4 +17,16 @@ class User < ApplicationRecord
             presence: true,
             confirmation: true,
             length: { minimum: 6 }
+
+  before_save :downcase_email
+
+  private
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
+  def downcase_email
+    self.email.downcase!
+  end
 end
