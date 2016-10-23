@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  subject { create(:user, email: 'new_user@gmail.com') }
+  subject { create(:user, email: "new_user@gmail.com") }
 
   describe "associations" do
     it { is_expected.to have_secure_password }

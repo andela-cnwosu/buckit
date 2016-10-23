@@ -18,4 +18,8 @@ module Messages
   def resources_not_exist_message(resource)
     "You currently do not have any #{resource}"
   end
+
+  def request_success_message
+    "Request was processed successfully"
+  end
 end

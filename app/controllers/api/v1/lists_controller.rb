@@ -7,7 +7,7 @@ module Api
 
       def index
         lists = current_user.lists
-        return render_json(lists, 200, true) unless lists.empty?
+        return render_get_json(lists, 200) unless lists.empty?
         error = resources_not_exist_message("bucket list")
         render(json: { error: error }, status: 204)
       end
@@ -22,7 +22,7 @@ module Api
       end
 
       def show
-        render_json(@list, 200, true)
+        render_get_json(@list, 200)
       end
 
       def destroy

@@ -4,7 +4,6 @@ RSpec.describe "All Lists", type: :request do
   describe "GET #index" do
     let!(:lists) do
       user = User.first || create(:user)
-      # create_list(:list_with_items, 5, user: user)
       5.times do |n|
         create(:list_with_items, user: user, name: "MyBucketList#{n}")
       end
