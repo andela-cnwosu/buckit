@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe SessionsController, type: :controller do
-  before(:all) { create :user }
+  let!(:user) { create :user }
 
   describe "POST #create" do
     context "when user is authenticated" do
@@ -9,6 +9,14 @@ RSpec.describe SessionsController, type: :controller do
         post :create, params: { session: attributes_for(:user, :login_valid) }
 
         expect(flash[:success]).to eq(successful_login_message)
+        expect(session[:user_id]).to eq(1)
+      end
+
+      it "redirects to session return route if set" do
+        session[:return_route] = "http//www.google.com"
+        post :create, params: { session: attributes_for(:user, :login_valid) }
+
+        expect(response).to redirect_to("http//www.google.com")
       end
     end
 
@@ -18,8 +26,8 @@ RSpec.describe SessionsController, type: :controller do
           session: attributes_for(:user, :user_invalid)
         }
 
-        expect(controller).to respond_with(200)
-        expect(response.content_type).to eq("text/javascript")
+        expect(response.body).to include(invalid_login_message)
+        expect(response.content_type).to eq("application/json")
       end
     end
   end
@@ -33,6 +41,10 @@ RSpec.describe SessionsController, type: :controller do
 
     it "shows successful message to the user" do
       expect(flash[:success]).to eq(successful_logout_message)
+    end
+
+    it "sets the session user id to nil" do
+      expect(session[:user_id]).to be_nil
     end
   end
 end
