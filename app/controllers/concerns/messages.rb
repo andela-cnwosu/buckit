@@ -22,4 +22,8 @@ module Messages
   def request_success_message
     "Request was processed successfully"
   end
+
+  def paginate_limit_message(limit)
+    "You can only retrieve up to #{limit} lists on a page"
+  end
 end
