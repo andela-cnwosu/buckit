@@ -10,7 +10,7 @@ class List < ApplicationRecord
     page_limit: 100,
     default_page_limit: 20,
     min_page_limit: 1
-  }
+  }.freeze
 
   def self.paginate(page, limit)
     page = (page.to_i if page) || 1

@@ -26,7 +26,7 @@ module ApplicationHelper
 
   def resource_with_message(model)
     model_hash = "#{model.class}Serializer".constantize.new(model)
-    success_message_hash = { Message: request_success_message}
+    success_message_hash = { Message: request_success_message }
     [success_message_hash, model_hash].reduce(:merge)
   end
 end
