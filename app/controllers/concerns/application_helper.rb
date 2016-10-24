@@ -3,11 +3,7 @@ module ApplicationHelper
 
   def flash_and_redirect_to_root(type, message)
     flash[type] = message
-    if session[:return_route]
-      redirect_to session[:return_route]
-    else
-      redirect_to root_url
-    end
+    redirect_to root_url
   end
 
   def render_json(model, status, succeeded)

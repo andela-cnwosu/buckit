@@ -31,13 +31,22 @@ RSpec.describe "All Lists", type: :request do
 
       it "returns the lists objects by page number and limit" do
         get "/api/v1/bucketlists?page=9&limit=3"
+
         expect(json.count).to eq(1)
       end
 
       it "returns an error message if limit is not in the valid range" do
         get "/api/v1/bucketlists?page=1&limit=101"
         message = "You can only retrieve up to 100 lists on a page"
+
         expect(json[:error]).to eq(message)
+      end
+
+      it "retrieves a bucket list if a name is provided" do
+        get "/api/v1/bucketlists?q=MyBucketList5"
+
+        expect(json.count).to eq(1)
+        expect(json[0][:name]).to eq("MyBucketList5")
       end
     end
 

@@ -18,4 +18,8 @@ module MessagesHelper
   def route_not_exist_message
     "Route does not exist"
   end
+
+  def invalid_login_message
+    "Your login information is incorrect"
+  end
 end

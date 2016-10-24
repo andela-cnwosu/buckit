@@ -18,4 +18,8 @@ class List < ApplicationRecord
     offset = (page - 1) * limit
     order(id: "asc").offset(offset).limit(limit)
   end
+
+  def self.search_by_name(param)
+    where(name: param)
+  end
 end

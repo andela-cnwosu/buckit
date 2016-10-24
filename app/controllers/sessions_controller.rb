@@ -7,9 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in user
     else
-      respond_to do |format|
-        format.js { render :create }
-      end
+      render json: { error: invalid_login_message }
     end
   end
 
