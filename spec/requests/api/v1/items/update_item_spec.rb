@@ -7,9 +7,11 @@ RSpec.describe "Update Item", type: :request do
       create :item
     end
 
-    context "when user has not provided the authorization code" do
-      it_behaves_like("unauthorized", "put", "/api/v1/bucketlists/1/items/1")
-    end
+    it_behaves_like("unauthorized", "put", "/api/v1/bucketlists/1/items/1")
+    it_behaves_like("not found", "put", "/api/v1/bucketlists/1/items/3")
+    it_behaves_like("invalid params", "put", "/api/v1/bucketlists/1/items/1")
+    it_behaves_like("invalid route", "put", "/api/v1/bucketlists/1/item/1")
+    it_behaves_like("serializable", "put", "/api/v1/bucketlists/1/items/1")
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
@@ -21,24 +23,6 @@ RSpec.describe "Update Item", type: :request do
         expect(response.status).to be(200)
         expect(Item.first.name).to eq("MyBucket")
       end
-    end
-
-    context "when user provide invalid parameters" do
-      route = "/api/v1/bucketlists/1/items/1"
-      it_behaves_like("invalid parameters", "put", route)
-    end
-
-    context "when the bucket list item does not exist" do
-      route = "/api/v1/bucketlists/1/items/3"
-      it_behaves_like("missing parameters", "put", route)
-    end
-
-    context "when the route does not exist" do
-      it_behaves_like("invalid route", "put", "/api/v1/bucketlists/1/item/1")
-    end
-
-    context "when the item object is returned" do
-      it_behaves_like("serializable", "put", "/api/v1/bucketlists/1/items/1")
     end
   end
 end

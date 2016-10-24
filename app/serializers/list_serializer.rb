@@ -5,6 +5,6 @@ class ListSerializer < ActiveModel::Serializer
   has_many :items
 
   def created_by
-    object.user.email
+    object.user.full_name
   end
 end

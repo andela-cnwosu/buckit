@@ -6,10 +6,12 @@ module Api
       before_action :retrieve_list, except: [:create, :index]
 
       def index
-        lists = current_user.lists
-        return render_json(lists, 200, true) unless lists.empty?
-        error = resources_not_exist_message("bucket list")
-        render(json: { error: error }, status: 204)
+        if valid_page_limit?
+          lists = current_user.lists.paginate(params[:page], params[:limit])
+          return render_get_json(lists, 200) unless lists.empty?
+          error = resources_not_exist_message("bucket list")
+          render(json: { error: error }, status: 204)
+        end
       end
 
       def create
@@ -22,7 +24,7 @@ module Api
       end
 
       def show
-        render_json(@list, 200, true)
+        render_get_json(@list, 200)
       end
 
       def destroy
@@ -33,6 +35,15 @@ module Api
 
       def list_params
         params.permit(:name)
+      end
+
+      def valid_page_limit?
+        settings = List::SETTINGS
+        valid_limit = (settings[:min_page_limit]..settings[:page_limit]).to_a
+        is_valid = valid_limit.include?(params[:limit].to_i) || !params[:limit]
+        error = paginate_limit_message(settings[:page_limit])
+        render(json: { error: error }, status: 404) unless is_valid
+        is_valid
       end
     end
   end
