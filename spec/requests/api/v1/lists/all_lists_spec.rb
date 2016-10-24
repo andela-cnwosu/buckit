@@ -46,7 +46,7 @@ RSpec.describe "All Lists", type: :request do
         get "/api/v1/bucketlists?q=MyBucketList5"
 
         expect(json.count).to eq(1)
-        expect(json[:name]).to eq("MyBucketList5")
+        expect(json[0][:name]).to eq("MyBucketList5")
       end
     end
 
