@@ -4,9 +4,10 @@ RSpec.describe "Create Item", type: :request do
   describe "POST #create" do
     let!(:list) { create :list }
 
-    context "when user has not provided the authorization code" do
-      it_behaves_like("unauthorized", :post, "/api/v1/bucketlists/1/items")
-    end
+    it_behaves_like("unauthorized", :post, "/api/v1/bucketlists/1/items")
+    it_behaves_like("invalid params", "post", "/api/v1/bucketlists/1/items")
+    it_behaves_like("invalid route", "post", "/api/v1/bucketlist/1/items")
+    it_behaves_like("serializable", "post", "/api/v1/bucketlists/1/items")
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
@@ -19,19 +20,6 @@ RSpec.describe "Create Item", type: :request do
         expect(response.status).to be(201)
         expect(json[:name]).to include(Item.first.name)
       end
-    end
-
-    context "when user provide invalid parameters" do
-      route = "/api/v1/bucketlists/1/items"
-      it_behaves_like("invalid parameters", "post", route)
-    end
-
-    context "when the route does not exist" do
-      it_behaves_like("invalid route", "post", "/api/v1/bucketlist/1/items")
-    end
-
-    context "when the item object is returned" do
-      it_behaves_like("serializable", "post", "/api/v1/bucketlists/1/items")
     end
   end
 end

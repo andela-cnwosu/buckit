@@ -7,9 +7,9 @@ RSpec.describe "Delete Item", type: :request do
       create :item
     end
 
-    context "when user has not provided the authorization code" do
-      it_behaves_like("unauthorized", "delete", "/api/v1/bucketlists/1/items/1")
-    end
+    it_behaves_like("unauthorized", "delete", "/api/v1/bucketlists/1/items/1")
+    it_behaves_like("not found", "delete", "/api/v1/bucketlists/1/items/3")
+    it_behaves_like("invalid route", "delete", "/api/v1/bucketlists/1/item/1")
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
@@ -20,15 +20,6 @@ RSpec.describe "Delete Item", type: :request do
         expect(response.status).to be(204)
         expect(Item.first).to be_nil
       end
-    end
-
-    context "when the bucketlist does not exist" do
-      route = "/api/v1/bucketlists/1/items/3"
-      it_behaves_like("missing parameters", "delete", route)
-    end
-
-    context "when the route does not exist" do
-      it_behaves_like("invalid route", "delete", "/api/v1/bucketlists/1/item/1")
     end
   end
 end

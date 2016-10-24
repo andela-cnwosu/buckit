@@ -8,11 +8,13 @@ RSpec.shared_examples "serializable" do |method, action|
 
   let!(:list_response) { json[0] || json }
 
-  it "returns a date created key" do
-    expect(list_response[:date_created]).to be_present
-  end
+  context "when the list object is returned" do
+    it "displays a date_created key" do
+      expect(list_response[:date_created]).to be_present
+    end
 
-  it "returns a json error message" do
-    expect(list_response[:date_modified]).to be_present
+    it "displays a date_modified key" do
+      expect(list_response[:date_modified]).to be_present
+    end
   end
 end
