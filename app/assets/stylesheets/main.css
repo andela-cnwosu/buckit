@@ -1,0 +1,346 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 15px;
+        background: transparent;
+        border: transparent;
+        -webkit-transition: background .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out;
+        transition: background .5s ease-in-out;
+    }
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 5px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 28px;
+    height: 3px;
+}
+
+.navbar-fixed-bottom .navbar-collapse.in,
+.navbar-fixed-top .navbar-collapse.in {
+    background: #1a2434;
+}
+
+.navbar {
+    border: transparent;
+}
+
+.navbar-header {
+    background: #1a2434;
+}
+
+.navbar-nav>li>a.page-link {
+    color: rgb(97, 108, 131);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+.navbar-nav>li>a.page-link:hover,
+.navbar-nav>li>a.page-link:focus {
+    color: rgb(161, 167, 181);
+}
+
+#intro-section {
+    height: 100vh;
+    padding-top: 200px;
+    text-align: center;
+    background: #1a2434;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+#signup-section {
+    min-height: 100%;
+    padding-top: 100px;
+    text-align: center;
+    background: #eee;
+}
+
+#documentation-section {
+    padding-top: 100px;
+}
+
+.section-header {
+    padding: 30px 20px 50px;
+    color: #0ac2d2;
+}
+
+article h2 {
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 24px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #f5f5f5;
+}
+
+article h3 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+
+article p {
+    line-height: 1.8;
+}
+
+.no-display {
+    display: none;
+}
+
+#intro-caption h1 {
+    font-size: 52px;
+    position: relative;
+    z-index: 100;
+}
+
+#intro-caption p {
+    position: relative;
+    z-index: 100;
+    padding: 50px 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgb(97, 108, 131);
+}
+
+.carousel-inner .content-item {
+    padding: 30px;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 24px;
+    color: #fff;
+}
+
+.page {
+    position: relative;
+    z-index: 20;
+    height: 100%;
+}
+
+.signin-link {
+    font-size: 15px;
+}
+
+.signin-link a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #00bcd4;
+}
+
+.theme-blue {
+    color: #0ac2d2
+}
+
+.bg-navy-blue {
+    background: #1a2434;
+}
+
+ul.affix {
+    position: fixed; 
+    top: 100px;
+    left: 70px;
+    width: 100%;
+}
+ul.affix-top {
+    position: static;
+}
+ul.affix-bottom {
+    position: absolute;
+}
+ 
+.sidenav {
+    border-radius: 5px;
+    padding: 0;
+}
+
+.sidebar {
+    margin-right: 20px;
+    padding-right: 0;
+}
+
+.sidebar .nav > li > a {
+    display: block;
+    padding: 5px 15px;
+    border-left: 4px solid transparent;
+    color: #616670;
+}
+
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+    text-decoration: none;
+    color: #0ac2d2;
+    background-color: transparent;
+}
+
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+    background: none;
+    color: #0ac2d2;
+    font-weight: 600;
+}
+
+.sidebar .sidenav > .active > a,
+.sidebar .sidenav > .active:hover > a,
+.sidebar .sidenav > .active:focus > a {
+    border-left: 8px solid #0ac2d2;
+    border-bottom: transparent solid 5px;
+    border-top: transparent solid 5px;
+}
+ 
+/* Nav: second level */
+.sidebar .nav .nav {
+    display: none;
+}
+
+.sidebar .nav > li.active .nav {
+    display:block;
+}
+
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+
+.sidebar .nav .nav > li > a {
+    padding-top:    3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 90%;
+}
+
+.blink {
+    content: ' ';
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.flash {
+    -webkit-animation-name: flash;
+    animation-name: flash;
+}
+
+@-webkit-keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.ripple {
+    width: 20px;
+    height: 20px;
+    margin-top: -60px;
+    margin-left: calc(50% - 25px);
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s ease-in-out;
+    animation: ripple 2.0s 0.2s infinite;
+    -webkit-animation: ripple 2.0s 0.2s  infinite;
+}
+
+.ripple:before,
+.ripple:after {
+    border: 40px solid white;
+    border-color: transparent transparent #1a2434 #1a2434;
+    border-radius: 100px;
+    content: '';
+    height: 0;
+    z-index: -1;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 0;
+    transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -webkit-transform:rotate(-90deg);
+}
+
+.ripple:after {
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+}
+
+@-webkit-keyframes ripple {
+  20% {
+    box-shadow: 0px 0px 0px 3px #fff,
+                0px 0px 0px 6px #1a2434;
+  }
+  
+  50% {
+    box-shadow: 0px 0px 0px 3px #fff,
+                0px 0px 0px 6px #1a2434,
+                0px 0px 0px 10px #fff,
+                0px 0px 2px 12px #1a2434;
+  }
+  
+  100% {
+    box-shadow: 0px 0px 0px 3px #fff,
+                0px 0px 0px 6px #1a2434,
+                0px 0px 0px 10px #fff,
+                0px 0px 2px 12px #1a2434, 
+                0px 0px 0px 16px #fff,
+                0px 0px 5px 18px #1a2434;
+  }
+}

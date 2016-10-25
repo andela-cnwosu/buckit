@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in user
     else
-      render json: { error: invalid_login_message }
+      render(json: { error: invalid_login_message })
     end
   end
 

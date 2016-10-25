@@ -1,7 +1,5 @@
 module Api
   class ApiController < ActionController::API
-    include SessionsHelper
-
     before_action :doorkeeper_authorize!
 
     def route_not_found
@@ -17,6 +15,10 @@ module Api
       @list = current_user.lists.find_by(id: list_id)
       return if @list
       render(json: { error: resource_not_exist_message }, status: 422)
+    end
+
+    def current_user
+      User.find_by(id: doorkeeper_token.resource_owner_id) if doorkeeper_token
     end
   end
 end

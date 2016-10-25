@@ -1,6 +1,10 @@
-<%= form_for(:session, :url => login_path, :remote => true ) do |form| %>
+<%= form_for(:session, url: login_path, remote: true, html: { class: 'signup-form' } ) do |form| %>
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <%= form.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true %>
-    <%= form.password_field :password, class: 'form-control', placeholder: 'Password' %>
-    <%= form.submit "Log In", class: 'btn btn-default btn-register' %>
+    <div class="form-input-group">
+      <%= form.email_field :email, placeholder: 'Email', autofocus: true %>
+    </div>
+    <div class="form-input-group">
+      <%= form.password_field :password, placeholder: 'Password' %>
+    </div>
+    <%= form.submit "Log into your account", class: 'btn btn-primary' %>
 <% end %>

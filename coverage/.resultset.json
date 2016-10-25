@@ -191,8 +191,8 @@
         1,
         null,
         1,
-        6,
-        6,
+        5,
+        5,
         null,
         null,
         1,
@@ -262,8 +262,7 @@
       "/Users/Andela-023/code/buckit/app/helpers/sessions_helper.rb": [
         1,
         1,
-        102,
-        102,
+        0,
         null,
         null,
         1,
@@ -411,7 +410,7 @@
         null,
         30,
         52,
-        204,
+        298,
         null,
         null,
         null
@@ -504,6 +503,8 @@
       ],
       "/Users/Andela-023/code/buckit/app/controllers/home_controller.rb": [
         1,
+        1,
+        null,
         null
       ],
       "/Users/Andela-023/code/buckit/app/controllers/application_controller.rb": [
@@ -611,7 +612,7 @@
         1,
         1,
         null,
-        1,
+        0,
         null,
         null,
         null,
@@ -643,9 +644,6 @@
         1,
         1,
         1,
-        null,
-        1,
-        null,
         null,
         1,
         3,
@@ -1108,8 +1106,6 @@
         1,
         null,
         1,
-        null,
-        1,
         16,
         null,
         null,
@@ -1122,6 +1118,10 @@
         26,
         26,
         6,
+        null,
+        null,
+        1,
+        102,
         null,
         null,
         null
@@ -1223,6 +1223,6 @@
         null
       ]
     },
-    "timestamp": 1477358025
+    "timestamp": 1477481834
   }
 }

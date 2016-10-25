@@ -1,2 +1,54 @@
-<%= render partial: "sessions/login_form" %> 
-<%= render partial: "users/signup_form" %> 
+<body data-spy="scroll" data-target="#affix-nav" data-offset="100">
+  <%= render partial: "nav" %>
+
+  <% unless signed_in? %>
+  <section id="intro-section" class="page">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div id="intro-caption">
+                      <h1>Buck<span class="theme-blue">it</span></h1>
+                      <div class="ripple"></div>
+                      <p>Your one way to the side of the moon hey what's up, this is the real deal.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <% end %>
+
+  <section id="documentation-section" class="page">
+    <%= render partial: "documentation" %>
+  </section>
+
+  <% unless signed_in? %>
+    <section id="signup-section" class="page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div id="signin-carousel" class="carousel slide">
+                        <div class="error"></div>
+                        <h3>Get started with Buckit</h3>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active content-item">
+                                <span class="signin-link"> New to Buckit?
+                                    <a class="page-link" data-target="#signin-carousel" data-slide-to="1"> Sign up</a> for free.
+                                </span>
+                                <%= render partial: "sessions/login_form" %>
+                            </div>
+                            <div class="item content-item">
+                                <span class="signin-link">
+                                    <a class="page-link" data-target="#signin-carousel" data-slide-to="0">Log in</a> to your account.
+                                </span>
+                                <%= render partial: "users/signup_form" %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  <% end %>
+</body>
+<%= render partial: "scroll", formats: [:js] %>
+

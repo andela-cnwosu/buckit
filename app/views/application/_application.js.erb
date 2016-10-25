@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  (function ($) {
+    <% if flash %>
+      $(function(){
+        <% flash.each do |key, value| %>
+          $.notify('<%= value %>', '<%= key %>');
+        <% end %>
+      });
+    <% end %>
+  });
+</script>

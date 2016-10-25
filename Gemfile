@@ -13,10 +13,12 @@ gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.7"
 gem "doorkeeper"
 gem "doorkeeper-jwt"
-gem "bootstrap-sass"
+gem "bootstrap-sass", "~> 3.3.6"
 gem "responders"
 gem "jsonapi", "~> 0.1.1.beta6"
 gem "active_model_serializers"
+gem 'rouge', '~> 1.10.1'
+gem 'redcarpet', '~> 3.3.2'
 
 group :development, :test do
   gem "pry-rails"
