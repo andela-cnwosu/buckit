@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root "home#index"
 
   namespace :api, defaults: { format: "json" } do
-    namespace :v1 do
+    scope module: :v1,
+          constraints: ApiConstraints.new(version: 1, default: true) do
       resources :lists, path: "bucketlists", except: [:edit, :new] do
         resources :items, only: [:create, :update, :destroy], param: :item_id
       end

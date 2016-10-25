@@ -38,9 +38,8 @@ module Api
       def retrieve_all_lists
         @lists = current_user.lists
         search_lists_by_name if params[:q]
-        if valid_page_limit?
-          @lists = @lists.paginate(params[:page], params[:limit])
-        end
+        return unless valid_page_limit?
+        @lists = @lists.paginate(params[:page], params[:limit])
       end
 
       def search_lists_by_name

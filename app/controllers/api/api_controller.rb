@@ -15,10 +15,8 @@ module Api
     def retrieve_list
       list_id = params[:id] || params[:list_id]
       @list = current_user.lists.find_by(id: list_id)
-      unless @list
-        render(json: { error: resource_not_exist_message }, status: 422)
-        return
-      end
+      return if @list
+      render(json: { error: resource_not_exist_message }, status: 422)
     end
   end
 end

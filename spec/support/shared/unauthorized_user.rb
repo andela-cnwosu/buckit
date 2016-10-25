@@ -1,4 +1,4 @@
-RSpec.shared_examples "unauthorized" do |method, action|
+RSpec.shared_examples "unauthorized user" do |method, action|
   context "when user has not provided the authorization code" do
     it "returns an authorization error response" do
       params = attributes_for(:item)

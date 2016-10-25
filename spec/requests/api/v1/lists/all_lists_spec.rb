@@ -9,13 +9,13 @@ RSpec.describe "All Lists", type: :request do
       end
     end
 
-    it_behaves_like("unauthorized", "get", "/api/v1/bucketlists")
-    it_behaves_like("invalid route", "get", "/api/v1/bucketlist")
-    it_behaves_like("serializable", "get", "/api/v1/bucketlists")
+    it_behaves_like("unauthorized user", "get", "/api/bucketlists")
+    it_behaves_like("invalid route", "get", "/api/bucketlist")
+    it_behaves_like("serialized resource", "get", "/api/bucketlists")
 
     context "when user has provided the authorization code" do
       include_context "doorkeeper oauth"
-      let!(:request) { get "/api/v1/bucketlists" }
+      let!(:request) { get "/api/bucketlists" }
 
       it "retrieves all bucket lists for the user limited by page" do
         expect(response.status).to be(200)
@@ -30,20 +30,20 @@ RSpec.describe "All Lists", type: :request do
       end
 
       it "returns the lists objects by page number and limit" do
-        get "/api/v1/bucketlists?page=9&limit=3"
+        get "/api/bucketlists?page=9&limit=3"
 
         expect(json.count).to eq(1)
       end
 
       it "returns an error message if limit is not in the valid range" do
-        get "/api/v1/bucketlists?page=1&limit=101"
+        get "/api/bucketlists?page=1&limit=101"
         message = "You can only retrieve up to 100 lists on a page"
 
         expect(json[:error]).to eq(message)
       end
 
       it "retrieves a bucket list if a name is provided" do
-        get "/api/v1/bucketlists?q=MyBucketList5"
+        get "/api/bucketlists?q=MyBucketList5"
 
         expect(json.count).to eq(1)
         expect(json[0][:name]).to eq("MyBucketList5")
@@ -55,7 +55,7 @@ RSpec.describe "All Lists", type: :request do
 
       it "returns a json error message" do
         List.destroy_all
-        get "/api/v1/bucketlists"
+        get "/api/bucketlists"
 
         expect(response.status).to be(204)
       end

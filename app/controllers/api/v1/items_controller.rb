@@ -27,10 +27,8 @@ module Api
 
       def retrieve_item
         @item = @list.items.find_by(id: params[:item_id])
-        unless @item
-          render(json: { error: resource_not_exist_message }, status: 422)
-          return
-        end
+        return if @item
+        render(json: { error: resource_not_exist_message }, status: 422)
       end
     end
   end

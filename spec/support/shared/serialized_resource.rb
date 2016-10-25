@@ -1,4 +1,4 @@
-RSpec.shared_examples "serializable" do |method, action|
+RSpec.shared_examples "serialized resource" do |method, action|
   include_context "doorkeeper oauth"
 
   before do

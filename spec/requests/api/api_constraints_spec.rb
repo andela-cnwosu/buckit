@@ -9,13 +9,13 @@ describe ApiConstraints do
     it "returns true when the version matches the 'Accept' header" do
       request = double(host: host, headers: header)
 
-      expect(api_constraints_v1.matches?(request)).to be_true
+      expect(api_constraints_v1.matches?(request)).to be_truthy
     end
 
     it "returns the default version when 'default' option is specified" do
       request = double(host: host)
 
-      expect(api_constraints_v1.matches?(request)).to be_true
+      expect(api_constraints_v1.matches?(request)).to be_truthy
     end
   end
 end

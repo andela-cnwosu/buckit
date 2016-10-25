@@ -1,4 +1,4 @@
-RSpec.shared_examples "not found" do |method, action|
+RSpec.shared_examples "no found resource" do |method, action|
   include_context "doorkeeper oauth"
 
   before do
