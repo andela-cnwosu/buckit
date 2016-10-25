@@ -19,6 +19,7 @@
         null,
         1,
         1,
+        1,
         null,
         null
       ],
@@ -655,34 +656,6 @@
         null,
         null
       ],
-      "/Users/Andela-023/code/buckit/spec/helpers/home_helper_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/Andela-023/code/buckit/spec/helpers/sessions_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/Users/Andela-023/code/buckit/spec/helpers/users_helper_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
       "/Users/Andela-023/code/buckit/spec/models/item_spec.rb": [
         1,
         null,
@@ -804,6 +777,33 @@
         1,
         76,
         null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/spec/requests/api/api_constraints_spec.rb": [
+        1,
+        null,
+        1,
+        3,
+        3,
+        2,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Andela-023/code/buckit/lib/api_constraints.rb": [
+        1,
         null
       ],
       "/Users/Andela-023/code/buckit/spec/requests/api/v1/items/create_item_spec.rb": [
@@ -1219,6 +1219,6 @@
         null
       ]
     },
-    "timestamp": 1477346983
+    "timestamp": 1477356248
   }
 }
