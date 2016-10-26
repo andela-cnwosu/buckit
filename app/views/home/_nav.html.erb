@@ -14,11 +14,11 @@
             <ul class="nav navbar-nav navbar-right">
                 <% unless signed_in? %>
                     <li>
-                        <%= link_to 'Home', "#intro-section", class: 'page-link', id: "home-link" %>
+                        <%= link_to 'Home', root_path, class: 'page-link', id: "home-link" %>
                     </li>
                 <% end %>
                 <li>
-                    <%= link_to 'Documentation', "#documentation-section", class: 'page-link' %>
+                    <%= link_to 'Documentation', doc_path, class: 'page-link' %>
                 </li>
                 <% if signed_in? %>
                     <li>
@@ -30,7 +30,7 @@
                 <% end %>
                 <% unless signed_in? %>
                     <li>
-                        <%= link_to 'Log In | Sign Up', "#signup-section", class: 'page-link' %>
+                        <%= link_to 'Log In | Sign Up', register_path, class: 'page-link' %>
                     </li>
                 <% end %>
             </ul>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root "home#index"
 
+  get "documentation", to: "home#documentation", as: "doc"
+
   namespace :api, defaults: { format: "json" } do
     scope module: :v1,
           constraints: ApiConstraints.new(version: 1, default: true) do
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   scope path: "users", controller: "users" do
-    get "new", to: "users#new"
+    get "register", to: "users#new", as: "register"
     post "signup", to: "users#create"
   end
 

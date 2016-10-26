@@ -18,7 +18,7 @@ module Api
       end
 
       def update
-        render_json(@list, 200, @list.update(list_params))
+        render_json(@list, 204, @list.update(list_params))
       end
 
       def show

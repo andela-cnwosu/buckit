@@ -10,6 +10,13 @@
 
     $('.page').horizon();
 
+    //Add active class to links on current URL
+    var path = window.location.pathname;
+    $(".nav .page-link").each(function(){
+      if($(this).attr("href") == path || $(this).attr("href") == '' )
+      $(this).parents('li').addClass("active");
+    });
+
     var ScrollToggle = function (top, callbackShow, callbackHide) {
       this.ontop = 0;
       this.hontop = 0;
