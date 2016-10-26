@@ -1,14 +1,6 @@
 require "rails_helper"
 
 RSpec.describe UsersController, type: :controller do
-  describe "GET #new" do
-    it "renders a new page" do
-      get :new
-
-      expect(response).to render_template(:new)
-    end
-  end
-
   describe "POST #create" do
     context "when user credentials are valid" do
       let!(:create) { post :create, params: { user: attributes_for(:user) } }
@@ -27,7 +19,7 @@ RSpec.describe UsersController, type: :controller do
       it "returns an error message" do
         post :create, params: { user: attributes_for(:user, :user_invalid) }
 
-        expect(flash[:error]).to include("Email is invalid")
+        expect(response.body).to include("Email is invalid")
       end
     end
   end

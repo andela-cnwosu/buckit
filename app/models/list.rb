@@ -3,8 +3,11 @@ class List < ApplicationRecord
   has_many :items
 
   validates :name,
-            presence: true,
-            uniqueness: true
+            presence: true
+
+  validates :name,
+            uniqueness: true,
+            if: :list_exists?
 
   SETTINGS = {
     page_limit: 100,
@@ -21,5 +24,11 @@ class List < ApplicationRecord
 
   def self.search_by_name(param)
     where(name: param)
+  end
+
+  private
+
+  def list_exists?
+    user.lists.any? { |list| list.name == name }
   end
 end
