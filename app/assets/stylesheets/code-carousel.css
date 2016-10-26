@@ -14,7 +14,11 @@
     color: #ddd;
     border: none;
     padding-top: 60px;
+    width: 100vh;
     height: calc(100vh - 120px);
+    font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .carousel {
@@ -25,12 +29,14 @@
   overflow: scroll;
   width: auto;
 }
+
 .carousel.vertical .carousel-inner > .item {
   width: auto;
   padding-right: 30px;
   -webkit-transition: 0.6s ease-in-out top;
   transition: 0.6s ease-in-out top;
 }
+
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel.vertical .carousel-inner > .item {
     -webkit-transition: 0.6s ease-in-out;
@@ -56,33 +62,41 @@
     top: 0;
   }
 }
+
 .carousel.vertical .carousel-inner > .active,
 .carousel.vertical .carousel-inner > .next,
 .carousel.vertical .carousel-inner > .prev {
   display: block;
 }
+
 .carousel.vertical .carousel-inner > .active {
   top: 0;
 }
+
 .carousel.vertical .carousel-inner > .next,
 .carousel.vertical .carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
+
 .carousel.vertical .carousel-inner > .next {
   top: 100%;
 }
+
 .carousel.vertical .carousel-inner > .prev {
   top: -100%;
 }
+
 .carousel.vertical .carousel-inner > .next.left,
 .carousel.vertical .carousel-inner > .prev.right {
   top: 0;
 }
+
 .carousel.vertical .carousel-inner > .active.left {
   top: -100%;
 }
+
 .carousel.vertical .carousel-inner > .active.right {
   top: 100%;
 }
@@ -91,16 +105,19 @@
   left: auto;
   width: 50px;
 }
+
 .carousel.vertical .carousel-control.up {
   top: 0;
   right: 0;
   bottom: 50%;
 }
+
 .carousel.vertical .carousel-control.down {
   top: 50%;
   right: 0;
   bottom: 0;
 }
+
 .carousel.vertical .carousel-control .icon-prev,
 .carousel.vertical .carousel-control .icon-next,
 .carousel.vertical .carousel-control .glyphicon-chevron-up,
@@ -110,6 +127,7 @@
   z-index: 5;
   display: inline-block;
 }
+
 .carousel.vertical .carousel-control .icon-prev,
 .carousel.vertical .carousel-control .glyphicon-chevron-up {
   left: 50%;
@@ -117,6 +135,7 @@
   top: 50%;
   margin-top: -10px;
 }
+
 .carousel.vertical .carousel-control .icon-next,
 .carousel.vertical .carousel-control .glyphicon-chevron-down {
   left: 50%;
@@ -124,6 +143,7 @@
   top: 50%;
   margin-top: -10px;
 }
+
 .carousel.vertical .carousel-control .icon-up,
 .carousel.vertical .carousel-control .icon-down {
   width: 20px;
@@ -131,9 +151,147 @@
   line-height: 1;
   font-family: serif;
 }
+
 .carousel.vertical .carousel-control .icon-prev:before {
   content: '\2039';
 }
+
 .carousel.vertical .carousel-control .icon-next:before {
   content: '\203a';
+}
+
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+}
+
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+
+.highlight .c,
+.highlight .cd,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs {
+  color: #505050;
+}
+
+.highlight .cp {
+  color: #f4bf75;
+}
+
+.highlight .nt {
+  color: #f4bf75;
+}
+
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+
+.highlight .gi {
+  color: #90a959;
+}
+
+.highlight .gd {
+  color: #ac4142;
+}
+
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+
+.highlight .k,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kv {
+  color: #aa759f;
+}
+
+.highlight .kc {
+  color: #d28445;
+}
+
+.highlight .kt {
+  color: #d28445;
+}
+
+.highlight .kd {
+  color: #d28445;
+}
+
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .sx,
+.highlight .s1 {
+  color: #90a959;
+}
+
+.highlight .sr {
+  color: #75b5aa;
+}
+
+.highlight .si {
+  color: #8f5536;
+}
+
+.highlight .se {
+  color: #8f5536;
+}
+
+.highlight .nn {
+  color: #f4bf75;
+}
+
+.highlight .nc {
+  color: #f4bf75;
+}
+
+.highlight .no {
+  color: #f4bf75;
+}
+
+.highlight .na {
+  color: #6a9fb5;
+}
+
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mb,
+.highlight .mx {
+  color: #90a959;
+}
+
+.highlight .ss {
+  color: #90a959;
+}
+
+blockquote {
+  background-color: rgba(28, 28, 28, 0.58);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px 0;
+  font-weight: 200;
+  font-size: 14px;
+  color: #ccc;
+  border: none;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #404040;
 }

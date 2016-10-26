@@ -1,66 +1,6 @@
 <div class="info">
-    <div id="vertical-carousel" class="carousel vertical slide">
-        <ol class="carousel-indicators no-display">
-            <li data-target="#vertical-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#vertical-carousel" data-slide-to="1"></li>
-            <li data-target="#vertical-carousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="code-block">
-                    <pre><code class="language-markup">&lt;!DOCTYPE html&gt; 
-&lt;html lang=&quot;en&quot;&gt; 
-    ...
-    &lt;div class=&quot;jumbotron&quot;&gt; 
-        &lt;h1&gt;Hello, world!&lt;/h1&gt; 
-        &lt;p&gt;...&lt;/p&gt; 
-        &lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-    &lt;/div&gt;
-    &lt;div class=&quot;jumbotron&quot;&gt; 
-        &lt;h1&gt;Hello, world!&lt;/h1&gt; 
-        &lt;p&gt;...&lt;/p&gt; 
-        &lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-    &lt;/div&gt;
-    ...
-&lt;/html&gt;
-                        </code>
-                    </pre>
-                </div>
-            </div>
-            <div class="item">
-                <div class="code-block">
-                                <pre><code class="language-php">&lt;?php 
-$txt = &quot;Hello world!&quot;; 
-$x = 5; 
-$y = 10.5; 
-
-echo $txt; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $x; 
-echo &quot;&lt;br&gt;&quot;; 
-echo $y; 
-?&gt;</code></pre>
-                </div>
-            </div>
-            <div class="item">
-                <div class="code-block">
-                    <pre><code class="language-git">$ git add *.txt
-$ git commit -m "test 123"</code></pre>
-                </div>
-            </div>
-        </div>
-
-            <!-- Controls -->
-            <a class="up carousel-control" href="#vertical-carousel" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="down carousel-control" href="#vertical-carousel" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
+    <%= render partial:"code_area" %>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-lg-offset-2 col-lg-4">
@@ -72,95 +12,375 @@ $ git commit -m "test 123"</code></pre>
     <div class="row">
         <nav id="affix-nav" class="sidebar col-md-2 col-sm-2 hidden-xs">
             <ul class="nav sidenav" data-spy="affix" data-offset-top="50">
-                <li class="active"><a href="#cupcake">Start</a>
-                    <ul class="nav">
-                        <li><a href="#sweetjelly">Something</a></li>
-                        <li><a href="#tiramisu">Another Thing</a></li>
-                        <li><a href="#pie">Another something</a></li>
+                <li class="active"><a href="#introduction">Introduction</a>
+                </li>
+                <li><a href="#authentication">Authentication</a>
+                    <ul class="nav">   
+                        <li><a href="#signing-up">Signing up</a></li>
+                        <li><a href="#logging-in">Logging in</a></li>
                     </ul>
                 </li>
-                <li><a href="#veggie">Again Lorem Ipsum</a>
+                <li><a href="#get-your-application-started">Get your App Started</a>
+                </li>
+                <li><a href="#authorization">Authorization</a>
                     <ul class="nav">   
-                        <li><a href="#coriander">Something</a></li>
-                        <li><a href="#kohlrabi">Another Something</a></li>
-                        <li><a href="#amaranth">Another Something</a></li>
-                        <li><a href="#soybean">Another Something</a></li>        
+                        <li><a href="#using-oauth2">Using Oauth2</a></li>
                     </ul>
                 </li>
-                <li><a href="#bacon">Finish Lorem Ipsum</a>
+                <li><a href="#endpoints">Endpoints</a>
                     <ul class="nav">   
-                        <li><a href="#meatball">Something</a></li>
-                        <li><a href="#prosciutto">Another Something</a></li>
-                        <li><a href="#brisket">Another Something</a></li>
-                        <li><a href="#steak">Another Something</a></li>        
+                        <li><a href="#create-a-bucketlist">Create a Bucketlist</a></li>
+                        <li><a href="#get-all-bucketlists">Get All Bucketlists</a></li>
+                        <li><a href="#get-a-bucketlist">Get a Bucketlist</a></li>
+                        <li><a href="#update-a-bucketlist">Update a Bucketlist</a></li>
+                        <li><a href="#delete-a-bucketlist">Delete a Bucketlist</a></li>
+                        <li><a href="#create-a-bucketlist-item">Create a Bucketlist Item</a></li>
+                        <li><a href="#update-a-bucketlist-item">Update a Bucketlist Item</a></li>
+                        <li><a href="#delete-a-bucketlist-item">Delete a Bucketlist Item</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
         <section class="col-md-6 col-sm-6 col-xs-12">
-            <article id="cupcake">
-                <h2>Something Lorem Ipsum</h2>
-                <p>Something ipsum dolor .. pie.</p>
-                <section id="sweetjelly"><h3>Sweet jelly</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                   <!--  <div class="code-block">
-                                <h6>HTML Code Example</h6>
-                                <pre><code class="language-markup">&lt;!DOCTYPE html&gt; 
-&lt;html lang=&quot;en&quot;&gt; 
-...
-&lt;div class=&quot;jumbotron&quot;&gt; 
-&lt;h1&gt;Hello, world!&lt;/h1&gt; 
-&lt;p&gt;...&lt;/p&gt; 
-&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-&lt;/div&gt;
-&lt;div class=&quot;jumbotron&quot;&gt; 
-&lt;h1&gt;Hello, world!&lt;/h1&gt; 
-&lt;p&gt;...&lt;/p&gt; 
-&lt;p&gt;&lt;a class=&quot;btn btn-primary btn-lg&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Learn more&lt;/a&gt;&lt;/p&gt; 
-&lt;/div&gt;
-...
-&lt;/html&gt;</code></pre>
-                            </div> -->
+            <article id="introduction">
+                <h2>Introduction</h2>
+                <p>Welcome to Buckit Rest API! You can use our API to access your bucketlist API endpoints. This can be done through create, update, index, show and destroy actions.</p>
+
+                <p>You can view code examples in the code area to the right and navigate through menu headings and subheadings for ease.</p>
+
+                <p>This API documentation was created for Buckit API which can be cloned on <a href="https://github.com/andela-cnwosu/buckit">Buckit Github</a>.</p>
+            </article>
+            <aside class="notice">
+            Key words denoted in capital letters (for example, &ldquo;` ACCESS_TOKEN &rdquo;`) should be replaced with the appropriate values.
+            </aside>
+            <br />
+            <article id="authentication">
+                <h2>Authentication</h2>
+                <p>To start using this API, log in or sign up <a href="#signup-section">here</a> to get authenticated.</p>
+                <section id="signing-up"><h3>Signing up</h3>
+                    <p>You must fill the following credentials to sign up:</p>
+
+                    <ul>
+                        <li><p>User&rsquo;s first name.</p></li>
+                        <li><p>User&rsquo;s last name.</p></li>
+                        <li><p>User&rsquo;s email.</p></li>
+                        <li><p>A User password that is at least 6 characters long.</p></li>
+                        <li><p>A confirmation password that must match the User password.</p></li>
+                    </ul>
                 </section>
-                <section id="tiramisu"><h3>Tiramisu</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                </section>
-                <section id="pie"><h3>Pie</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+                <section id="logging-in"><h3>Logging in</h3>
+                    <p>You must fill the following credentials to log in:</p>
+
+                    <ul>
+                        <li><p>User&rsquo;s email.</p></li>
+                        <li><p>A valid password used when the user was signed up.</p></li>
+                    </ul>
                 </section>
             </article>
             <br />
-            <article id="veggie">
-                <h2>Something Lorem Ipsum</h2>
-                <p>Something ipsum dolor .. pie.</p>
-                <section id="coriander"><h3>Coriander</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                </section>
-                <section id="kohlrabi"><h3>Kohlrabi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                </section>
-                <section id="amaranth"><h3>Amaranth</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                </section>
-                <section id="soybean"><h3>Soybean</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                </section>
+            <article id="get-your-application-started">
+                <h2>Get your Application Started</h2>
+                <p>To use Buckit API on your application(s), you need to register your application <a href="http://buckit-api.herokuapp.com/oauth/applications">here</a>. You must provide a name and redirect URI for your application. You could also use <code class="prettyprint">urn:ietf:wg:oauth:2.0:oob</code> to test locally. Include a scope/scopes if you need to specify the permissions you request users to authorize for your application. An application Id and secret would be generated for you.</p>
             </article>
             <br />
-            <article id="bacon">
-                <h2>Something Lorem Ipsum</h2>
-                <p>Something ipsum dolor .. pie.</p>
-                <section id="meatball"><h3>Meat Ball</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+            <article id="authorization">
+                <h2>Authorization</h2>
+                <section id="using-auth2"><h3>Using Oauth 2</h3>
+                    <p>Before your application can access the user&rsquo;s data on Buckit, it must obtain an access token. Using your application id and secret, the user can get an authentication code which would be used to get the token for your application.
+To get started, follow the steps below using the code area on the right as reference:</p>
+
+                    <ol>
+                        <li><p>Add <code class="prettyprint">gem &#39;oauth2&#39;</code> to your Gemfile and run bundler.</p></li>
+                        <li><p>Initialize a new client.</p></li>
+                        <li><p>Get the authorization url. This url is what your user should click on your page to get started with granting your application access to our API. The <code class="prettyprint">REDIRECT_URI</code> should be the same as the one you provided when you registered your application on Buckit. When the user authorizes your application, he is redirected back to <code class="prettyprint">http://REDIRECT_URI?code=AUTHORIZATION_CODE</code> . The <code class="prettyprint">AUTHORIZATION_CODE</code> would be used to get the access token.</p></li>
+                        <li><p>Get the authorization code from the authorization response above by stripping the &lsquo;code&rsquo; query from the response. Get the access token with this code as shown in the code area to the right.</p></li>
+                        <li><p>You can use rest-client gem to get user resources. Get started by adding <code class="prettyprint">gem &#39;rest-client&#39;</code> to your Gemfile. Then access the endpoints as shown in the code area on the right.</p></li>
+                    </ol>
                 </section>
-                <section id="prosciutto"><h3>Prosciutto</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+            </article>
+            <aside class="notice">
+            The access token should be used in the request header or in the endpoint url.
+            </aside>
+            <br />
+            <article id="endpoints">
+                <h2>Endpoints</h2>
+                <p>
+                    <aside class="notice">
+All endpoints can only be accessed by the user and do not have public access.
+</aside>
+                </p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>EndPoint</th>
+                        <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>POST /bucketlists/</td>
+                        <td>Creates a new bucketlist for the user.</td>
+                        </tr>
+                        <tr>
+                        <td>GET /bucketlists/</td>
+                        <td>Retrieves all bucketlists belonging to the user.</td>
+                        </tr>
+                        <tr>
+                        <td>GET /bucketlists/<id></td>
+                        <td>Retrieves a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>PUT /bucketlists/<id></td>
+                        <td>Updates a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>DELETE /bucketlists/<id></td>
+                        <td>Deletes a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>POST /bucketlists/<id>/items/</td>
+                        <td>Creates an item in a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>PUT /bucketlists/<id>/items/<item_id></td>
+                        <td>Updates an item with id = <code class="prettyprint">&lt;item_id&gt;</code> in a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                        <tr>
+                        <td>DELETE /bucketlists/<id>/items/<item_id></td>
+                        <td>Deletes an item with id = <code class="prettyprint">&lt;item_id&gt;</code> in a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <aside class="notice">
+We would assume that the access token is sent in the header. If you would prefer to send it in the url, append &ldquo; access_token=ACCESS_TOKEN &rdquo; as a query to the url.
+</aside>
+                <section id="create-a-bucketlist"><h3>Create a Bucketlist</h3>
+                    <p>This endpoint creates a new bucketlist.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+                    <p><code class="prettyprint">POST http://buckit-api.herokuapp.com/api/bucketlists?name=&lt;name&gt;</code></p>
+                    <h4 id="query-parameters">Query Parameters</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>true</td>
+                            <td>This sets the name of the bucketlist to be created. Note that the name must be unique to other bucketlists belonging to the user.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
-                <section id="brisket"><h3>Brisket</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+                <section id="get-all-bucketlists"><h3>Get All Bucketlists</h3>
+                    <p>This endpoint retrieves all bucketlists.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><strong>Searching</strong></p>
+
+                    <p>Users can search for a bucket list by name using a query parameter q.</p>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists?q=&lt;q&gt;</code></p>
+
+                    <p>Example</p>
+
+                    <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists?q=mylist</p>
+
+                    <p><em>Response</em>: Bucketlist with the string <code class="prettyprint">mylist</code> as its name.</p>
+
+                    <p><strong>Pagination</strong></p>
+
+                    <p>The bucketlists can be paginated such that users can specify the number of bucketlists they would like to have using query parameters page and limit.</p>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists?page=&lt;page&gt;&amp;limit=&lt;limit&gt;</code></p>
+
+                    <p>Example:</p>
+
+                    <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists?page=2&amp;limit=5</p>
+
+                    <p><em>Response</em>: <code class="prettyprint">5</code> bucketlists starting from the 6th bucketlist. First page would have bucketlists 1 to 5.</p>
+                    <h4 id="query-parameters">Query Parameters</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>q</td>
+                            <td>-</td>
+                            <td>false</td>
+                            <td>This finds a bucketlist with name = <code class="prettyprint">q</code>.</td>
+                            </tr>
+                            <tr>
+                            <td>page</td>
+                            <td>1</td>
+                            <td>false</td>
+                            <td>This sets a specified page with the specified number of lists.</td>
+                            </tr>
+                            <tr>
+                            <td>limit</td>
+                            <td>20</td>
+                            <td>false</td>
+                            <td>This sets the specified number of lists on a page. The maximum limit is 100.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
-                <section id="steak"><h3>Steak</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
+                <section id="get-a-bucketlist"><h3>Get a Bucketlist</h3>
+                    <p>This endpoint retrieves a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;</code></p>
+
+                    <h3 id="query-parameters">Query Parameters</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>true</td>
+                            <td>This sets the name of the bucketlist to be created.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="update-a-bucketlist"><h3>Update a Bucketlist</h3>
+                    <p>This endpoint updates a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+                    <p><code class="prettyprint">PUT http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;?name=&lt;name&gt;</code></p>
+                    <h4 id="query-parameters">Query Parameters</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>true</td>
+                            <td>This updates the name of the bucketlist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="delete-a-bucketlist">
+                    <h3>Delete a Bucketlist</h3>
+                    <p>This endpoint deletes a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">DELETE http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;</code></p>
+
+                    <h4 id="query-parameters">Query Parameters</h4>
+
+                    <p>This command does not require any parameter.</p>
+                </section>
+                <section id="create-a-bucketlist-item">
+                    <h3>Create a Bucketlist Item</h3>
+                    <p>This endpoint creates a new bucketlist item.</p>
+
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">POST http://buckit-api.herokuapp.com/api/bucketlists/1/items?name=&lt;name&gt;</code></p>
+
+                    <h4 id="query-parameters">Query Parameters</h4>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>true</td>
+                            <td>This sets the name of the bucketlist to be created.</td>
+                            </tr>
+                            <tr>
+                            <td>done</td>
+                            <td>false</td>
+                            <td>false</td>
+                            <td>This sets true or false depending on if the item has been accomplished or not.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="update-a-bucketlist-item">
+                    <h3>Update a Bucketlist Item</h3>
+                    <p>This endpoint updates a bucketlist item with id = <code class="prettyprint">&lt;item_id&gt;</code>.</p>
+
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">PUT http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;/items/&lt;item_id&gt;?name=&lt;name&gt;&amp;done=&lt;done&gt;</code></p>
+
+                    <h4 id="query-parameters">Query Parameters</h4>
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>false</td>
+                            <td>This updates the name of the bucketlist.</td>
+                            </tr>
+                            <tr>
+                            <td>done</td>
+                            <td>-</td>
+                            <td>false</td>
+                            <td>This updates the done attribute of the bucketlist.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>NB</strong> At least one parameter must be used in updating a bucketlist item</p>
+                </section>
+                <section id="delete-a-bucketlist-item">
+                    <h3>Delete a Bucketlist Item</h3>
+                    <p>This endpoint deletes a bucketlist item with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
+
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">DELETE http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;/items/&lt;item_id&gt;</code></p>
+
+                    <h4 id="query-parameters">Query Parameters</h4>
+
+                    <p>This command does not require any parameter.</p>
                 </section>
             </article>
             <br />

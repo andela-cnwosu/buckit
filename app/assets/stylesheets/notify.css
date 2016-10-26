@@ -92,3 +92,18 @@
     40%  { -webkit-transform: translateY(-20px); }
   80% { -webkit-transform: translateY(-10px); }
 }
+
+aside {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  line-height: 1.6;
+}
+
+aside:before {
+  vertical-align: middle;
+  padding-right: 0.5em;
+  font-size: 14px;
+}
