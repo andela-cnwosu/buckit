@@ -1,11 +1,11 @@
 source "https://rubygems.org"
 
 gem "rails", "~> 5.0.0", ">= 5.0.0.1"
-gem "sqlite3"
 gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
+gem "pg"
 
 gem "jquery-rails"
 gem "turbolinks", "~> 5"
@@ -17,8 +17,6 @@ gem "bootstrap-sass", "~> 3.3.6"
 gem "responders"
 gem "jsonapi", "~> 0.1.1.beta6"
 gem "active_model_serializers"
-gem 'rouge', '~> 1.10.1'
-gem 'redcarpet', '~> 3.3.2'
 
 group :development, :test do
   gem "pry-rails"
@@ -30,6 +28,7 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "simplecov"
   gem "rails-controller-testing"
+  gem "sqlite3"
 end
 
 group :development do
