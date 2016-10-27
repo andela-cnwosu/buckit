@@ -1,13 +1,12 @@
-<div id="vertical-carousel" class="carousel vertical slide">
-  <ol class="carousel-indicators no-display">
-      <li data-target="#vertical-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#vertical-carousel" data-slide-to="1"></li>
-      <li data-target="#vertical-carousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <div class="code-block">
-            <blockquote>
+<div class="vertical-slider code">
+  <ul>
+    <li>
+      <blockquote>
+      <p>No code here</p>
+      </blockquote>
+    </li>
+    <li>
+<blockquote>
 <p>Run Bundler</p>
 </blockquote>
 <pre class="highlight ruby"><code><span class="n">bundle</span> <span class="n">install</span>
@@ -48,16 +47,14 @@
 <p>Access API Endpoints</p>
 </blockquote>
 
-<p>First, install rest-client with <code class="prettyprint">bundle install</code> then use the code below:</p>
+<pre>First, install rest-client with <code class="prettyprint">bundle install</code>then use the code below:</pre>
 <pre class="highlight ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
 
 <span class="no">URI</span> <span class="o">=</span> <span class="s2">"http://http://buckit-api.herokuapp.com/api/API_ENDPOINT?access_token=ACCESS_TOKEN"</span>
 <span class="no">RESOURCE</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="no">URI</span><span class="p">)</span>
 </code></pre>
-        </div>
-    </div>
-    <div class="item">
-      <div class="code-block">
+    </li>
+    <li>
 <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists?name=list1"</span><span class="p">)</span>
 </code></pre>
 
@@ -74,15 +71,12 @@
   </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-      </div>
-    </div>
-    <div class="item">
-      <div class="code-block">
-        <pre class="highlight ruby"><code><span class="no">RESOURCE</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists"</span><span class="p">)</span>
-        </code></pre>
-
-        <blockquote><p>The above command returns JSON structured like this:</p></blockquote>
-  <pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </li>
+    <li>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list1"</span><span class="p">,</span><span class="w">
@@ -109,108 +103,91 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-      </div>
-    </div>
-    <div class="item">
-      <div class="code-block">
-          <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/2"</span><span class="p">)</span>
-          </code></pre>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/2"</span><span class="p">)</span>
+</code></pre>
 
-          <blockquote>
-          <p>The above command returns JSON structured like this:</p>
-          </blockquote>
-          <pre class="highlight json"><code><span class="p">{</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list2"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-            </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-          </span></code></pre>
-      </div>
-    </div>
-    <div class="item">
-      <div class="code-block">
-          <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1?name=updatedlist1"</span><span class="p">)</span>
-          </code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list2"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1?name=updatedlist1"</span><span class="p">)</span>
+</code></pre>
 
-          <blockquote>
-          <p>The above command returns JSON structured like this:</p>
-          </blockquote>
-          <pre class="highlight json"><code><span class="p">{</span><span class="w">
-            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedlist1"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-            </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:59:00"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-          </span></code></pre>
-      </div>
-    </div>
-    <div class="item">
-      <div class="code-block">
-          <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1"</span><span class="p">)</span>
-          </code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"updatedlist1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 11:21:01"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:59:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane Doe"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1"</span><span class="p">)</span>
+</code></pre>
 
-          <blockquote>
-          <p>The above command does not return any content and returns a status of 204</p>
-          </blockquote>
-      </div>
-    </div>
-    <div class="item">
-      <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items?name=item1"</span><span class="p">)</span>
-      </code></pre>
+<blockquote>
+<p>The above command does not return any content and returns a status of 204</p>
+</blockquote>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items?name=item1"</span><span class="p">)</span>
+</code></pre>
 
-      <blockquote>
-      <p>The above command returns JSON structured like this:</p>
-      </blockquote>
-      <pre class="highlight json"><code><span class="p">{</span><span class="w">
-        </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:37:42"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:37:42"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-      </span></code></pre>
-    </div>
-    <div class="item">
-      <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items/1?done=true"</span><span class="p">)</span>
-      </code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:37:42"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 12:37:42"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items/1?done=true"</span><span class="p">)</span>
+</code></pre>
 
-      <blockquote>
-      <p>The above command returns JSON structured like this:</p>
-      </blockquote>
-      <pre class="highlight json"><code><span class="p">{</span><span class="w">
-        </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 01:50:18"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 01:50:58"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-      </span></code></pre>
-    </div>
-    <div class="item">
-      <pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items/1"</span><span class="p">)</span>
-      </code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request was processed successfully"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 01:50:18"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-26 01:50:58"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+    </li>
+    <li>
+<pre class="highlight ruby"><code><span class="no">RestClient</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"http://buckit-api.herokuapp.com/api/bucketlists/1/items/1"</span><span class="p">)</span>
+</code></pre>
 
-      <blockquote>
-      <p>The above command does not return any content and returns a status of 204</p>
-      </blockquote>
-    </div>
-  </div>
-
-    <!-- Controls -->
-    <a class="up carousel-control" href="#vertical-carousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="down carousel-control" href="#vertical-carousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+<blockquote>
+<p>The above command does not return any content and returns a status of 204</p>
+</blockquote>
+    </li>
+  </ul>
 </div>

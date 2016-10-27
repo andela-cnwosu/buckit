@@ -10,5 +10,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%= yield %>
+  <body data-spy="scroll" data-target="#affix-nav" data-offset="100">
+    <%= render partial: "home/nav" %>
+    <%= yield %>
+  </body>
+  <%= render partial: "home/scroll", formats: [:js] %>
 </html>

@@ -10,39 +10,9 @@
 </div>
 <div class="container">
     <div class="row">
-        <nav id="affix-nav" class="sidebar col-md-2 col-sm-2 hidden-xs">
-            <ul class="nav sidenav" data-spy="affix" data-offset-top="50">
-                <li class="active"><a href="#introduction">Introduction</a>
-                </li>
-                <li><a href="#authentication">Authentication</a>
-                    <ul class="nav">   
-                        <li><a href="#signing-up">Signing up</a></li>
-                        <li><a href="#logging-in">Logging in</a></li>
-                    </ul>
-                </li>
-                <li><a href="#get-your-application-started">Get your App Started</a>
-                </li>
-                <li><a href="#authorization">Authorization</a>
-                    <ul class="nav">   
-                        <li><a href="#using-oauth2">Using Oauth2</a></li>
-                    </ul>
-                </li>
-                <li><a href="#endpoints">Endpoints</a>
-                    <ul class="nav">   
-                        <li><a href="#create-a-bucketlist">Create a Bucketlist</a></li>
-                        <li><a href="#get-all-bucketlists">Get All Bucketlists</a></li>
-                        <li><a href="#get-a-bucketlist">Get a Bucketlist</a></li>
-                        <li><a href="#update-a-bucketlist">Update a Bucketlist</a></li>
-                        <li><a href="#delete-a-bucketlist">Delete a Bucketlist</a></li>
-                        <li><a href="#create-a-bucketlist-item">Create a Bucketlist Item</a></li>
-                        <li><a href="#update-a-bucketlist-item">Update a Bucketlist Item</a></li>
-                        <li><a href="#delete-a-bucketlist-item">Delete a Bucketlist Item</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <%= render partial: "sidenav" %>
         <section class="col-md-6 col-sm-6 col-xs-12">
-            <article id="introduction">
+            <article id="introduction" class="code-block">
                 <h2>Introduction</h2>
                 <p>Welcome to Buckit Rest API! You can use our API to access your bucketlist API endpoints. This can be done through create, update, index, show and destroy actions.</p>
 
@@ -51,12 +21,12 @@
                 <p>This API documentation was created for Buckit API which can be cloned on <a href="https://github.com/andela-cnwosu/buckit">Buckit Github</a>.</p>
             </article>
             <aside class="notice">
-            Key words denoted in capital letters (for example, &ldquo;` ACCESS_TOKEN &rdquo;`) should be replaced with the appropriate values.
+            Key words denoted in capital letters (for example, &ldquo;ACCESS_TOKEN&rdquo;) should be replaced with the appropriate values.
             </aside>
             <br />
             <article id="authentication">
                 <h2>Authentication</h2>
-                <p>To start using this API, log in or sign up <a href="#signup-section">here</a> to get authenticated.</p>
+                <p>To start using this API, log in or sign up <%= link_to 'here', register_path %> to get authenticated.</p>
                 <section id="signing-up"><h3>Signing up</h3>
                     <p>You must fill the following credentials to sign up:</p>
 
@@ -83,7 +53,7 @@
                 <p>To use Buckit API on your application(s), you need to register your application <a href="http://buckit-api.herokuapp.com/oauth/applications">here</a>. You must provide a name and redirect URI for your application. You could also use <code class="prettyprint">urn:ietf:wg:oauth:2.0:oob</code> to test locally. Include a scope/scopes if you need to specify the permissions you request users to authorize for your application. An application Id and secret would be generated for you.</p>
             </article>
             <br />
-            <article id="authorization">
+            <article id="authorization" class="code-block">
                 <h2>Authorization</h2>
                 <section id="using-auth2"><h3>Using Oauth 2</h3>
                     <p>Before your application can access the user&rsquo;s data on Buckit, it must obtain an access token. Using your application id and secret, the user can get an authentication code which would be used to get the token for your application.
@@ -104,11 +74,9 @@ To get started, follow the steps below using the code area on the right as refer
             <br />
             <article id="endpoints">
                 <h2>Endpoints</h2>
-                <p>
-                    <aside class="notice">
-All endpoints can only be accessed by the user and do not have public access.
-</aside>
-                </p>
+                <aside class="notice">
+                    All endpoints can only be accessed by the user and do not have public access.
+                </aside>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -152,9 +120,10 @@ All endpoints can only be accessed by the user and do not have public access.
                     </tbody>
                 </table>
                 <aside class="notice">
-We would assume that the access token is sent in the header. If you would prefer to send it in the url, append &ldquo; access_token=ACCESS_TOKEN &rdquo; as a query to the url.
-</aside>
-                <section id="create-a-bucketlist"><h3>Create a Bucketlist</h3>
+                We would assume that the access token is sent in the header. If you would prefer to send it in the url, append &ldquo; access_token=ACCESS_TOKEN &rdquo; as a query to the url.
+                </aside>
+                <section id="create-a-bucketlist" class="code-block">
+                    <h3>Create a Bucketlist</h3>
                     <p>This endpoint creates a new bucketlist.</p>
                     <h4 id="http-request">HTTP Request</h4>
                     <p><code class="prettyprint">POST http://buckit-api.herokuapp.com/api/bucketlists?name=&lt;name&gt;</code></p>
@@ -178,7 +147,8 @@ We would assume that the access token is sent in the header. If you would prefer
                         </tbody>
                     </table>
                 </section>
-                <section id="get-all-bucketlists"><h3>Get All Bucketlists</h3>
+                <section id="get-all-bucketlists" class="code-block">
+                    <h3>Get All Bucketlists</h3>
                     <p>This endpoint retrieves all bucketlists.</p>
                     <h4 id="http-request">HTTP Request</h4>
 
@@ -188,7 +158,7 @@ We would assume that the access token is sent in the header. If you would prefer
 
                     <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists?q=&lt;q&gt;</code></p>
 
-                    <p>Example</p>
+                    <p class="example">Example:</p>
 
                     <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists?q=mylist</p>
 
@@ -200,7 +170,7 @@ We would assume that the access token is sent in the header. If you would prefer
 
                     <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists?page=&lt;page&gt;&amp;limit=&lt;limit&gt;</code></p>
 
-                    <p>Example:</p>
+                    <p class="example">Example:</p>
 
                     <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists?page=2&amp;limit=5</p>
 
@@ -237,7 +207,8 @@ We would assume that the access token is sent in the header. If you would prefer
                         </tbody>
                     </table>
                 </section>
-                <section id="get-a-bucketlist"><h3>Get a Bucketlist</h3>
+                <section id="get-a-bucketlist" class="code-block">
+                    <h3>Get a Bucketlist</h3>
                     <p>This endpoint retrieves a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
                     <h4 id="http-request">HTTP Request</h4>
 
@@ -263,7 +234,8 @@ We would assume that the access token is sent in the header. If you would prefer
                         </tbody>
                     </table>
                 </section>
-                <section id="update-a-bucketlist"><h3>Update a Bucketlist</h3>
+                <section id="update-a-bucketlist" class="code-block">
+                    <h3>Update a Bucketlist</h3>
                     <p>This endpoint updates a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
                     <h4 id="http-request">HTTP Request</h4>
                     <p><code class="prettyprint">PUT http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;?name=&lt;name&gt;</code></p>
@@ -287,7 +259,7 @@ We would assume that the access token is sent in the header. If you would prefer
                         </tbody>
                     </table>
                 </section>
-                <section id="delete-a-bucketlist">
+                <section id="delete-a-bucketlist" class="code-block">
                     <h3>Delete a Bucketlist</h3>
                     <p>This endpoint deletes a bucketlist with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
                     <h4 id="http-request">HTTP Request</h4>
@@ -298,7 +270,7 @@ We would assume that the access token is sent in the header. If you would prefer
 
                     <p>This command does not require any parameter.</p>
                 </section>
-                <section id="create-a-bucketlist-item">
+                <section id="create-a-bucketlist-item" class="code-block">
                     <h3>Create a Bucketlist Item</h3>
                     <p>This endpoint creates a new bucketlist item.</p>
 
@@ -333,7 +305,7 @@ We would assume that the access token is sent in the header. If you would prefer
                         </tbody>
                     </table>
                 </section>
-                <section id="update-a-bucketlist-item">
+                <section id="update-a-bucketlist-item" class="code-block">
                     <h3>Update a Bucketlist Item</h3>
                     <p>This endpoint updates a bucketlist item with id = <code class="prettyprint">&lt;item_id&gt;</code>.</p>
 
@@ -370,7 +342,7 @@ We would assume that the access token is sent in the header. If you would prefer
 
                     <p><strong>NB</strong> At least one parameter must be used in updating a bucketlist item</p>
                 </section>
-                <section id="delete-a-bucketlist-item">
+                <section id="delete-a-bucketlist-item" class="code-block">
                     <h3>Delete a Bucketlist Item</h3>
                     <p>This endpoint deletes a bucketlist item with id = <code class="prettyprint">&lt;id&gt;</code>.</p>
 
