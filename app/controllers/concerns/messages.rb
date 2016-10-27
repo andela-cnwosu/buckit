@@ -23,10 +23,6 @@ module Messages
     "You can only retrieve up to #{limit} lists on a page"
   end
 
-  def list_not_exists_message
-    "There is no list by this name"
-  end
-
   def invalid_login_message
     "Your login information is incorrect"
   end

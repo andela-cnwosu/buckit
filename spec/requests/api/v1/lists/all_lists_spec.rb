@@ -37,7 +37,7 @@ RSpec.describe "All Lists", type: :request do
 
       it "returns an error message if limit is not in the valid range" do
         get "/api/bucketlists?page=1&limit=101"
-        message = "You can only retrieve up to 100 lists on a page"
+        message = paginate_limit_error
 
         expect(json[:error]).to eq(message)
       end

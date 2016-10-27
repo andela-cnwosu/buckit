@@ -20,5 +20,19 @@ module Api
     def current_user
       User.find_by(id: doorkeeper_token.resource_owner_id) if doorkeeper_token
     end
+
+    def render_json(model, status, succeeded)
+      if succeeded
+        message = resource_with_message model
+      else
+        message = { error: model.errors.full_messages }
+        status = 422
+      end
+      render json: message, status: status
+    end
+
+    def render_get_json(model, status)
+      render json: model, status: status
+    end
   end
 end

@@ -15,6 +15,10 @@ class List < ApplicationRecord
     min_page_limit: 1
   }.freeze
 
+  scope :search_by_name, ->(param) do
+    where("lower(name) like ?", "%#{param.downcase}%")
+  end
+
   def self.paginate(page, limit)
     page = (page.to_i if page) || 1
     limit = (limit.to_i if limit) || SETTINGS[:default_page_limit]
@@ -22,8 +26,9 @@ class List < ApplicationRecord
     order(id: "asc").offset(offset).limit(limit)
   end
 
-  def self.search_by_name(param)
-    where(name: param)
+  def self.valid_page_limit?(limit)
+    valid_limit = (SETTINGS[:min_page_limit]..SETTINGS[:page_limit]).to_a
+    valid_limit.include?(limit.to_i) || limit.nil?
   end
 
   private

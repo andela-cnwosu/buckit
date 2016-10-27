@@ -18,4 +18,8 @@ module MessagesHelper
   def invalid_login_message
     "Your login information is incorrect"
   end
+
+  def paginate_limit_error
+    "You can only retrieve up to 100 lists on a page"
+  end
 end
