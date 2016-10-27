@@ -9,8 +9,8 @@ RSpec.describe UsersController, type: :controller do
         expect(User.first.email).to eq("user@gmail.com")
       end
 
-      it "redirects to root path with a flash message" do
-        expect(controller).to redirect_to(root_path)
+      it "redirects to documentation path with a flash message" do
+        expect(controller).to redirect_to(documentation_path)
         expect(flash[:success]).to eq(successful_login_message)
       end
     end

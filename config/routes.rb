@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get "documentation", to: "home#documentation", as: "doc"
+  get "documentation", to: "home#documentation", as: "documentation"
 
   namespace :api, defaults: { format: "json" } do
     scope module: :v1,
