@@ -1,24 +1,26 @@
 .info {
   background-color: #2a2f33;
   width: 30%;
-  border: 1px #999 solid;
   right: 0;
-  bottom: 0;
+  top: 0;
   position: fixed;
   z-index: 10;
   padding: 20px;
 }
 
-.code-block pre {
+article code {
+  padding: 2px 4px;
+  color: inherit; 
+  background-color: #e0efef;
+}
+
+.code pre {
     background-color: #2a2f33;
     color: #ddd;
     border: none;
-    padding-top: 60px;
-    width: 100vh;
-    height: calc(100vh - 120px);
     font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-    font-size: 12px;
-    line-height: 1.5;
+    font-size: 11px;
+    line-height: 1.8;
 }
 
 .carousel {

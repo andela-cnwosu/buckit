@@ -7,7 +7,7 @@ module Sessions
     if session[:return_route]
       redirect_to session[:return_route]
     else
-      redirect_to root_url
+      redirect_to documentation_url
     end
   end
 
