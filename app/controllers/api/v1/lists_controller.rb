@@ -24,7 +24,7 @@ module Api
       end
 
       def destroy
-        render_json(@list, :ok, @list.destroy)
+        render_json(@list, :no_content, @list.destroy)
       end
 
       private

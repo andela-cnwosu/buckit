@@ -12,11 +12,21 @@ RSpec.describe SessionsController, type: :controller do
         expect(session[:user_id]).to eq(1)
       end
 
-      it "redirects to session return route if set" do
-        session[:return_route] = "http//www.google.com"
-        post :create, params: { session: attributes_for(:user, :login_valid) }
+      context "when session return route is set" do
+        it "redirects to session return route" do
+          session[:return_route] = "http//www.google.com"
+          post :create, params: { session: attributes_for(:user, :login_valid) }
 
-        expect(response).to redirect_to("http//www.google.com")
+          expect(response).to redirect_to("http//www.google.com")
+        end
+      end
+
+      context "when session return route is not set" do
+        it "redirects to the documentation path" do
+          post :create, params: { session: attributes_for(:user, :login_valid) }
+
+          expect(response).to redirect_to(documentation_path)
+        end
       end
     end
 

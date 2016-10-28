@@ -9,7 +9,7 @@ module Api
 
       def create
         item = @list.items.build(item_params)
-        render_json(item, 201, item.save)
+        render_json(item, :created, item.save)
       end
 
       def index
@@ -21,11 +21,11 @@ module Api
       end
 
       def update
-        render_json(@item, 200, @item.update(item_params))
+        render_json(@item, :ok, @item.update(item_params))
       end
 
       def destroy
-        render_json(@item, 204, @item.destroy)
+        render_json(@item, :no_content, @item.destroy)
       end
 
       private
