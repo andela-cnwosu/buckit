@@ -305,6 +305,93 @@ To get started, follow the steps below using the code area on the right as refer
                         </tbody>
                     </table>
                 </section>
+                <section id="get-all-bucketlist-items" class="code-block">
+                    <h3>Get All Bucketlist Items</h3>
+                    <p>This endpoint retrieves all bucketlist items.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><strong>Searching</strong></p>
+
+                    <p>Users can search for a bucket list item by name using a query parameter q.</p>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;/items?q=&lt;q&gt;</code></p>
+
+                    <p class="example">Example:</p>
+
+                    <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists/1/items?q=myitem</p>
+
+                    <p><em>Response</em>: Bucketlist (with id = 1) item with the string <code class="prettyprint">myitem</code> as its name.</p>
+
+                    <p><strong>Pagination</strong></p>
+
+                    <p>The bucketlist items can be paginated such that users can specify the number of items they would like to have using query parameters page and limit.</p>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;/items?page=&lt;page&gt;&amp;limit=&lt;limit&gt;</code></p>
+
+                    <p class="example">Example:</p>
+
+                    <p><em>Request</em>: GET http://buckit-api.herokuapp.com/api/bucketlists/1/items?page=2&amp;limit=5</p>
+
+                    <p><em>Response</em>: <code class="prettyprint">5</code> items in bucketlist (with id = 1) starting from the 6th item. First page would have items 1 to 5.</p>
+                    <h4 id="query-parameters">Query Parameters</h4>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>q</td>
+                            <td>-</td>
+                            <td>false</td>
+                            <td>This finds a bucketlist item with name = <code class="prettyprint">q</code>.</td>
+                            </tr>
+                            <tr>
+                            <td>page</td>
+                            <td>1</td>
+                            <td>false</td>
+                            <td>This sets a specified page with the specified number of items.</td>
+                            </tr>
+                            <tr>
+                            <td>limit</td>
+                            <td>20</td>
+                            <td>false</td>
+                            <td>This sets the specified number of items on a page. The maximum limit is 100.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section id="get-a-bucketlist-item" class="code-block">
+                    <h3>Get a Bucketlist Item</h3>
+                    <p>This endpoint retrieves a bucketlist item with id = <code class="prettyprint">&lt;item_id&gt;</code>.</p>
+                    <h4 id="http-request">HTTP Request</h4>
+
+                    <p><code class="prettyprint">GET http://buckit-api.herokuapp.com/api/bucketlists/&lt;id&gt;/items/&lt;item_id&gt;</code></p>
+
+                    <h3 id="query-parameters">Query Parameters</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Default</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>name</td>
+                            <td>-</td>
+                            <td>true</td>
+                            <td>This sets the name of the bucketlist item to be created.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
                 <section id="update-a-bucketlist-item" class="code-block">
                     <h3>Update a Bucketlist Item</h3>
                     <p>This endpoint updates a bucketlist item with id = <code class="prettyprint">&lt;item_id&gt;</code>.</p>

@@ -42,7 +42,7 @@ module Api
 
       def retrieve_all_items
         return page_limit_error unless Search.valid_page_limit?(params[:limit])
-        user_resource = Item.search_by_name(params[:q])
+        user_resource = @list.items.search_by_name(params[:q])
         @items = Search.paginate(user_resource, params[:page], params[:limit])
       end
     end
