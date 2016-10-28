@@ -32,8 +32,14 @@ module Api
     end
 
     def render_get_json(model, status)
-      return render(json: model, status: status) unless model.empty?
-      error = resources_not_exist_message("bucket list")
+      return render(json: model, status: status) if model.present?
+      error = resource_not_exist_message
+      render(json: { error: error }, status: 404)
+    end
+
+    def page_limit_error
+      set = Search::SETTINGS
+      error = paginate_limit_message(set[:min_page_limit], set[:page_limit])
       render(json: { error: error }, status: 404)
     end
   end

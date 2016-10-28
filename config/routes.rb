@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     scope module: :v1,
           constraints: ApiConstraints.new(version: 1, default: true) do
       resources :lists, path: "bucketlists", except: [:edit, :new] do
-        resources :items, only: [:create, :update, :destroy], param: :item_id
+        resources :items, except: [:edit, :new], param: :item_id
       end
     end
-    match "*url", to: "api#route_not_found", via: :all
+    match "*url", to: "api#endpoint_not_found", via: :all
   end
 
   scope path: "users", controller: "users" do

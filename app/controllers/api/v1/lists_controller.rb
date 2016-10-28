@@ -7,10 +7,7 @@ module Api
       before_action :retrieve_all_lists, only: [:index]
 
       def index
-
-        return render_get_json(@lists, :ok) unless @lists.empty?
-        error = resources_not_exist_message("bucket list")
-        render(json: { error: error }, status: :no_content)
+        render_get_json(@lists, :ok)
       end
 
       def create
@@ -19,7 +16,7 @@ module Api
       end
 
       def update
-        render_json(@list, :no_content, @list.update(list_params))
+        render_json(@list, :ok, @list.update(list_params))
       end
 
       def show
@@ -27,7 +24,7 @@ module Api
       end
 
       def destroy
-        render_json(@list, :no_content, @list.destroy)
+        render_json(@list, :ok, @list.destroy)
       end
 
       private
@@ -37,17 +34,9 @@ module Api
       end
 
       def retrieve_all_lists
-        if params[:q]
-          @lists = current_user.lists.search_by_name(params[:q])
-        else
-          return page_limit_error unless List.valid_page_limit?(params[:limit])
-          @lists = current_user.lists.paginate(params[:page], params[:limit])
-        end
-      end
-
-      def page_limit_error
-        error = paginate_limit_message(List::SETTINGS[:page_limit])
-        render(json: { error: error }, status: 404)
+        return page_limit_error unless Search.valid_page_limit?(params[:limit])
+        user_resource = List.search_by_name(params[:q])
+        @lists = Search.paginate(user_resource, params[:page], params[:limit])
       end
     end
   end

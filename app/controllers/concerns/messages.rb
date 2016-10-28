@@ -8,19 +8,15 @@ module Messages
   end
 
   def resource_not_exist_message
-    "The resource requested does not exist"
-  end
-
-  def resources_not_exist_message(resource)
-    "You currently do not have any #{resource}"
+    "The requested resource does not exist"
   end
 
   def request_success_message
     "Request was processed successfully"
   end
 
-  def paginate_limit_message(limit)
-    "You can only retrieve up to #{limit} lists on a page"
+  def paginate_limit_message(min, max)
+    "You can only retrieve #{min} to #{max} lists on a page"
   end
 
   def invalid_login_message

@@ -8,7 +8,7 @@ module MessagesHelper
   end
 
   def resource_not_exist_message
-    "The resource requested does not exist"
+    "The requested resource does not exist"
   end
 
   def endpoint_not_exist_message
