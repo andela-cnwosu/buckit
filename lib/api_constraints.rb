@@ -5,6 +5,6 @@ class ApiConstraints
   end
 
   def matches?(req)
-    @default || req.headers["Accept"].include?("version=#{version}")
+    @default || req.headers.fetch(:accept).include?("version=#{@version}")
   end
 end
