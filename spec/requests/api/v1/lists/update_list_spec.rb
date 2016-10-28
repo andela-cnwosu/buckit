@@ -15,7 +15,7 @@ RSpec.describe "Update List", type: :request do
       it "updates a bucket list" do
         put "/api/bucketlists/1", params: attributes_for(:list, :updated)
 
-        expect(response.status).to be(204)
+        expect(response.status).to be(200)
         expect(List.first.name).to eq("MyBucket")
       end
     end

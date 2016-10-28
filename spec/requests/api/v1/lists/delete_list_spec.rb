@@ -14,7 +14,7 @@ RSpec.describe "Delete List", type: :request do
       it "deletes a bucket list" do
         delete "/api/bucketlists/1"
 
-        expect(response.status).to be(204)
+        expect(response.status).to be(200)
         expect(List.first).to be_nil
       end
     end

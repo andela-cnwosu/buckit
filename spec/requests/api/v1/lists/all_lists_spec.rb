@@ -57,7 +57,7 @@ RSpec.describe "All Lists", type: :request do
         List.destroy_all
         get "/api/bucketlists"
 
-        expect(response.status).to be(204)
+        expect(response.status).to be(404)
       end
     end
   end

@@ -2,8 +2,8 @@ module Api
   class ApiController < ActionController::API
     before_action :doorkeeper_authorize!
 
-    def route_not_found
-      render json: { error: "Route does not exist" }, status: 404
+    def endpoint_not_found
+      render json: { error: "Endpoint does not exist" }, status: 404
     end
 
     def doorkeeper_unauthorized_render_options(*)
@@ -32,7 +32,9 @@ module Api
     end
 
     def render_get_json(model, status)
-      render json: model, status: status
+      return render(json: model, status: status) unless model.empty?
+      error = resources_not_exist_message("bucket list")
+      render(json: { error: error }, status: 404)
     end
   end
 end

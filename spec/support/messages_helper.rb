@@ -11,8 +11,8 @@ module MessagesHelper
     "The resource requested does not exist"
   end
 
-  def route_not_exist_message
-    "Route does not exist"
+  def endpoint_not_exist_message
+    "Endpoint does not exist"
   end
 
   def invalid_login_message
@@ -20,6 +20,6 @@ module MessagesHelper
   end
 
   def paginate_limit_error
-    "You can only retrieve up to 100 lists on a page"
+    "You can only retrieve 1 to 100 lists on a page"
   end
 end
