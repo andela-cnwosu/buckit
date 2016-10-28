@@ -8,7 +8,7 @@ Doorkeeper.configure do
   access_token_expires_in 2.hours
   access_token_generator 'Doorkeeper::JWT'
   use_refresh_token
-  enable_application_owner confirmation: false
+  enable_application_owner confirmation: true
 end
 
 Doorkeeper::JWT.configure do

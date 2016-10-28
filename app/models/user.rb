@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_secure_password
   has_many :lists
   has_many :items, through: :lists
+  has_many :oauth_applications,
+            class_name: "Doorkeeper::Application",
+            as: :owner
 
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

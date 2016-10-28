@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021083958) do
+ActiveRecord::Schema.define(version: 20161028143105) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -65,6 +65,9 @@ ActiveRecord::Schema.define(version: 20161021083958) do
     t.string   "scopes",       default: "", null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.index ["owner_id", "owner_type"], name: "index_oauth_applications_on_owner_id_and_owner_type"
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
