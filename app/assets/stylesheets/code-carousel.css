@@ -11,6 +11,7 @@
 
 .btn.btn-primary.code-btn {
   z-index: 100;
+  display: none;
   position: fixed;
   top: 52px;
   outline: none;

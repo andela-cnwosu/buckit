@@ -54,7 +54,9 @@
     var height = $(window).height();
     $('.code-block').each(function(index) {
       new ScrollToggle($(this).position().top + 150, function () {
-        $('.code-btn').show();
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          $('.code-btn').show();
+        }
         $('[data-slide="' + index + '"]').trigger('click');
       }, function () {
         $('[data-slide="' + (index - 1) + '"]').trigger('click');
