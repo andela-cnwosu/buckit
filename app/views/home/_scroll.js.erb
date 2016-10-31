@@ -54,10 +54,15 @@
     var height = $(window).height();
     $('.code-block').each(function(index) {
       new ScrollToggle($(this).position().top + 150, function () {
+        $('.code-btn').show();
         $('[data-slide="' + index + '"]').trigger('click');
       }, function () {
         $('[data-slide="' + (index - 1) + '"]').trigger('click');
       });
+    });
+
+    $(document).on('click', '.code-btn', function() {
+      $('.info').toggleClass('no-display');
     });
 
     function getScrollTop() {

@@ -1,6 +1,26 @@
+@media(min-width:767px) {
+  div.info {
+      width: 30%;
+      display: block;
+  }
+
+  .btn.btn-primary.code-btn {
+    display: none;
+  }
+}
+
+.btn.btn-primary.code-btn {
+  z-index: 100;
+  position: fixed;
+  top: 52px;
+  outline: none;
+  right: 25px;
+  padding: 10px;
+  width: auto;
+}
+
 .info {
   background-color: #2a2f33;
-  width: 30%;
   right: 0;
   top: 0;
   position: fixed;
