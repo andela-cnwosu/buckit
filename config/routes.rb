@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   use_doorkeeper do
-    controllers applications: 'oauth/applications'
+    controllers applications: "oauth/applications"
   end
 
   root "home#index"
