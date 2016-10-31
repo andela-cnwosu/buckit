@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/andela-cnwosu/buckit.svg?branch=develop)](https://travis-ci.org/andela-cnwosu/buckit)
 [![Coverage Status](https://coveralls.io/repos/github/andela-cnwosu/buckit/badge.svg?branch=develop)](https://coveralls.io/github/andela-cnwosu/buckit?branch=develop)
-[![Code Climate](https://codeclimate.com/github/andela-cnwosu/buckit/badges/gpa.svg)](https://codeclimate.com/github/andela-cnwosu/buckit)
+[![Code Climate](https://codeclimate.com/github/andela-cnwosu/buckit/badges/gpa.svg?maxAge=0)](https://codeclimate.com/github/andela-cnwosu/buckit)
 
 ## Description
 
